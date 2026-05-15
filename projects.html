@@ -3,91 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Homelab projects by Sai Aik Kwan - Networking & Cybersecurity portfolio">
-    <title>Projects - Sai Aik Kwan's Homelab Portfolio</title>
+    <meta name="description" content="Projects by Sai Aik Kwan - Homelab networking, security, and web development projects documented on GitHub.">
+    <title>Projects - Sai Aik Kwan's Lab Portfolio</title>
+    
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <meta property="og:title" content="Projects - Sai Aik Kwan's Lab Portfolio">
+    <meta property="og:description" content="Hands-on networking, security, and web development projects from my homelab.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saiaikkwan.github.io/projects">
+    <meta property="og:image" content="https://saiaikkwan.github.io/assets/images/profile.jpg">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Projects - Sai Aik Kwan">
+    <meta name="twitter:description" content="Networking, security, and web development projects.">
+    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">Homelab Projects</h1>
-            <p class="page-subtitle">Hands-on networking and cybersecurity projects documented on GitHub</p>
-            <a href="https://github.com/sai-aik-kwan" target="_blank" class="github-header-link">
-                <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
-                </svg>
-                github.com/sai-aik-kwan
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Sai Aik Kwan</span>
+                <span class="logo-badge">.com</span>
             </a>
-        </div>
-    </section>
-
-    <!-- PROJECTS FILTER -->
-    <section class="projects-filter">
-        <div class="container">
-            <div class="filter-buttons">
-                <button class="filter-btn active" data-filter="all">All Projects</button>
-                <button class="filter-btn" data-filter="networking">Networking</button>
-                <button class="filter-btn" data-filter="security">Security</button>
-                <button class="filter-btn" data-filter="automation">Automation</button>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="projects.html" class="nav-link active">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
             </div>
         </div>
-    </section>
-
-    <!-- ALL PROJECTS GRID -->
-    <section class="all-projects">
-        <div class="container">
-            <div class="projects-grid full-grid" id="allProjects"></div>
-            
-            <div class="more-projects-cta">
-                <p>More projects available on my GitHub</p>
-                <a href="https://github.com/sai-aik-kwan" target="_blank" class="btn btn-primary">
-                    Explore GitHub Repository
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">Homelab Projects</h1>
+                <p class="page-subtitle">Hands-on networking, security, and web development projects documented on GitHub</p>
+                <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="github-header-link">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                    github.com/saiaikkwan
                 </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/components.js"></script>
-    <script>
-        // Populate all projects
-        (function() {
-            const d = portfolioData;
-            let html = '';
-            d.projects.forEach(project => {
-                const firstTech = project.technologies[0].toLowerCase();
-                let category = 'networking';
-                if (firstTech.includes('kali') || firstTech.includes('nmap') || firstTech.includes('security') || firstTech.includes('wireshark') || firstTech.includes('firewall')) {
-                    category = 'security';
-                } else if (firstTech.includes('python') || firstTech.includes('bash') || firstTech.includes('powershell') || firstTech.includes('zabbix')) {
-                    category = 'automation';
-                } else if (firstTech.includes('windows') || firstTech.includes('active') || firstTech.includes('group')) {
-                    category = 'security';
-                }
-                
-                html += `
-                <div class="project-card" data-category="${category}">
-                    <div class="project-image">
-                        <img src="assets/images/${project.image}" alt="${project.title}" onerror="this.src='https://via.placeholder.com/400x250/1a1a2e/00ff88?text=Homelab+Project'">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">${project.title}</h3>
-                        <p class="project-description">${project.description}</p>
-                        <div class="project-tech">
-                            ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
+        <section class="projects-filter">
+            <div class="container">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">All Projects</button>
+                    <button class="filter-btn" data-filter="webdev">Web Development</button>
+                    <button class="filter-btn" data-filter="networking">Networking</button>
+                    <button class="filter-btn" data-filter="security">Security</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="all-projects">
+            <div class="container">
+                <div class="projects-grid full-grid">
+                    <!-- Project 01 -->
+                    <div class="project-card" data-category="html5">
+                        <div class="project-image">
+                            <img src="assets/images/project01.png" alt="Lab Login Portal - Frontend" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1.1rem;padding:1rem;text-align:center;>Lab Login Portal - Frontend</div>';">
                         </div>
-                        <a href="${project.github_url}" target="_blank" class="project-link">View on GitHub →</a>
+                        <div class="project-content">
+                            <h3 class="project-title">Lab Login Portal - Frontend</h3>
+                            <p class="project-description">A clean, responsive login interface for a homelab management portal. Features form validation, dark/light mode toggle, and accessibility-first design principles.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Form Validation</span>
+                                <span class="tech-tag">Responsive Design</span>
+                            </div>
+                            <a href="https://github.com/saiaikkwan/lab-login-frontend" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                        </div>
                     </div>
-                </div>`;
-            });
-            document.getElementById('allProjects').innerHTML = html;
-        })();
-    </script>
+
+                    <!-- Project 02 -->
+                    <div class="project-card" data-category="html5">
+                        <div class="project-image">
+                            <img src="assets/images/project02.png" alt="Personal Portfolio Website" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1.1rem;padding:1rem;text-align:center;>Personal Portfolio Website</div>';">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Personal Portfolio Website</h3>
+                            <p class="project-description">This responsive portfolio site with theme toggle, project showcase, contact form, and smooth scroll animations. Built from scratch with modern CSS techniques.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">Flexbox</span>
+                                <span class="tech-tag">CSS Grid</span>
+                                <span class="tech-tag">CSS Animations</span>
+                            </div>
+                            <a href="https://github.com/saiaikkwan/portfolio" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 03 -->
+                    <div class="project-card" data-category="html5">
+                        <div class="project-image">
+                            <img src="assets/images/project03.png" alt="Cybersecurity Learning Hub" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1.1rem;padding:1rem;text-align:center;>Cybersecurity Learning Hub</div>';">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Cybersecurity Learning Hub</h3>
+                            <p class="project-description">A multi-page educational website introducing cybersecurity fundamentals: common threats, defense strategies, encryption basics, and safe browsing practices for beginners.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">UI/UX Design</span>
+                                <span class="tech-tag">Multi-page Site</span>
+                            </div>
+                            <a href="https://github.com/saiaikkwan/cybersec-learning-hub" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 04 -->
+                    <div class="project-card" data-category="networking">
+                        <div class="project-image">
+                            <img src="assets/images/project04.png" alt="SOHO Network Design & Setup" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1.1rem;padding:1rem;text-align:center;>SOHO Network Design & Setup</div>';">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">SOHO Network Design & Setup</h3>
+                            <p class="project-description">Designed and documented a Small Office/Home Office network with VLAN segmentation, DHCP server configuration, DNS setup, and secure wireless access using enterprise best practices.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Networking</span>
+                                <span class="tech-tag">VLAN</span>
+                                <span class="tech-tag">DHCP</span>
+                                <span class="tech-tag">DNS</span>
+                                <span class="tech-tag">Subnetting</span>
+                                <span class="tech-tag">Wi-Fi Security</span>
+                            </div>
+                            <a href="https://github.com/saiaikkwan/soho-network" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 05 -->
+                    <div class="project-card" data-category="cisco">
+                        <div class="project-image">
+                            <img src="assets/images/project05.png" alt="Enterprise Network Simulation" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1.1rem;padding:1rem;text-align:center;>Enterprise Network Simulation</div>';">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Enterprise Network Simulation</h3>
+                            <p class="project-description">Built a multi-site enterprise network in Cisco Packet Tracer with OSPF dynamic routing, inter-VLAN routing, access control lists, and redundant WAN links between branch offices.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Cisco</span>
+                                <span class="tech-tag">Packet Tracer</span>
+                                <span class="tech-tag">OSPF</span>
+                                <span class="tech-tag">ACL</span>
+                                <span class="tech-tag">VLAN</span>
+                                <span class="tech-tag">WAN</span>
+                            </div>
+                            <a href="https://github.com/saiaikkwan/enterprise-pkt" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                        </div>
+                    </div>
+
+                    <!-- Project 06 -->
+                    <div class="project-card" data-category="kali linux">
+                        <div class="project-image">
+                            <img src="assets/images/project06.png" alt="Kali Linux Pentesting Lab" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1.1rem;padding:1rem;text-align:center;>Kali Linux Pentesting Lab</div>';">
+                        </div>
+                        <div class="project-content">
+                            <h3 class="project-title">Kali Linux Pentesting Lab</h3>
+                            <p class="project-description">Set up Metasploitable 2 as a vulnerable target and performed full reconnaissance, vulnerability scanning, and controlled exploitation using Kali Linux tools with documented methodology.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Kali Linux</span>
+                                <span class="tech-tag">Metasploit</span>
+                                <span class="tech-tag">Nmap</span>
+                                <span class="tech-tag">Wireshark</span>
+                                <span class="tech-tag">Enumeration</span>
+                                <span class="tech-tag">Exploitation</span>
+                            </div>
+                            <a href="https://github.com/saiaikkwan/kali-pentest-lab" target="_blank" rel="noopener noreferrer" class="project-link">View on GitHub →</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="more-projects-cta">
+                    <p>More projects available on my GitHub</p>
+                    <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Explore GitHub Repository</a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sai Aik Kwan</h3>
+                    <p>Networking & Cybersecurity Student<br>
+                    Auston College, Myanmar<br>
+                    Diploma: Auston Institute of Management, SG | Bachelor's: University of Wolverhampton, UK</p>
+                    <p class="footer-location">📍 Mandalay, Myanmar</p>
+                    <div class="footer-education-links">
+                        <a href="https://auston.edu.mm/" target="_blank" rel="noopener noreferrer">Auston College, Myanmar</a>
+                        <span>•</span>
+                        <a href="https://www.wlv.ac.uk/" target="_blank" rel="noopener noreferrer">University of Wolverhampton, UK</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                        <a href="https://linkedin.com/in/sai-aik-kwan" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                        <a href="mailto:saiaikkwan.pro@gmail.com" class="social-link">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sai Aik Kwan. All rights reserved.</p>
+                <p class="footer-credit">Built with HTML/CSS/JS • Hosted on GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+    
     <script src="assets/js/main.js"></script>
 </body>
 </html>
