@@ -3,221 +3,373 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="About Sai Aik Kwan - Education, Certifications & Skills">
+    <meta name="description" content="About Sai Aik Kwan - Networking & Cybersecurity Student at Auston College, Myanmar. Education, certifications, skills, and tools.">
     <title>About Sai Aik Kwan - Education, Certifications & Skills</title>
+    
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <meta property="og:title" content="About Sai Aik Kwan - Education, Certifications & Skills">
+    <meta property="og:description" content="Networking & Cybersecurity Student at Auston College, Myanmar. CCNA & Security+ in progress.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saiaikkwan.github.io/about">
+    <meta property="og:image" content="https://saiaikkwan.github.io/assets/images/profile.jpg">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="About Sai Aik Kwan">
+    <meta name="twitter:description" content="Networking & Cybersecurity Student at Auston College, Myanmar.">
+    
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <!-- PAGE HEADER -->
-    <section class="page-header">
-        <div class="container">
-            <h1 class="page-title">About Me</h1>
-            <p class="page-subtitle">Networking & Cybersecurity student building practical skills through hands-on learning</p>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Sai Aik Kwan</span>
+                <span class="logo-badge">.com</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link active">About</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
         </div>
-    </section>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">About Me</h1>
+                <p class="page-subtitle">Networking & Cybersecurity student building practical skills through hands-on learning</p>
+            </div>
+        </section>
 
-    <!-- BIO SECTION -->
-    <section class="bio-section">
-        <div class="container">
-            <div class="bio-grid">
-                <div class="bio-content">
-                    <h2>Hi, I'm Sai Aik Kwan</h2>
-                    <p class="bio-text">
-                        I'm a Networking and Cybersecurity student at <strong>Auston College, Myanmar</strong>, 
-                        pursuing my diploma in partnership with the <strong>University of Wolverhampton, UK</strong>. 
-                        Based in Mandalay, I'm passionate about building secure and efficient network infrastructures.
-                    </p>
-                    <p class="bio-text">
-                        My journey into networking began with a curiosity about how data travels across the internet. 
-                        That curiosity evolved into a dedicated homelab where I practice enterprise-level networking 
-                        concepts, security configurations, and system administration.
-                    </p>
-                    <p class="bio-text">
-                        I'm currently preparing for <strong>CCNA</strong> and <strong>CompTIA Security+</strong> certifications 
-                        while documenting my learning through practical projects on GitHub.
-                    </p>
+        <section class="bio-section">
+            <div class="container">
+                <div class="bio-grid">
+                    <div class="bio-content">
+                        <h2>Hi, I'm Sai Aik Kwan</h2>
+                        <p class="bio-text">
+                            I'm a Networking and Cybersecurity student at 
+                            <strong><a href="https://auston.edu.mm/" target="_blank" rel="noopener noreferrer">Auston College, Myanmar</a></strong>, 
+                            pursuing my diploma in partnership with the 
+                            <strong><a href="https://www.auston.edu.sg/" target="_blank" rel="noopener noreferrer">Auston Institute of Management, Singapore</a></strong> 
+                            and my bachelor's degree in partnership with the 
+                            <strong><a href="https://www.wlv.ac.uk/" target="_blank" rel="noopener noreferrer">University of Wolverhampton, UK</a></strong>. 
+                            Based in Mandalay, I'm passionate about building secure and efficient network infrastructures.
+                        </p>
+                        <p class="bio-text">
+                            My journey into networking began with a curiosity about how data travels across the internet. 
+                            That curiosity evolved into a dedicated homelab where I practice enterprise-level networking 
+                            concepts, security configurations, and system administration.
+                        </p>
+                        <p class="bio-text">
+                            I'm currently preparing for <strong>CCNA</strong> and <strong>CompTIA Security+</strong> certifications 
+                            while documenting my learning through practical projects on GitHub.
+                        </p>
+                        
+                        <div class="quick-facts">
+                            <div class="fact-item">
+                                <span class="fact-emoji">📍</span>
+                                <span>Based in Mandalay, Myanmar</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-emoji">🎓</span>
+                                <span>Auston College, Myanmar</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-emoji">💻</span>
+                                <span>Homelab Enthusiast</span>
+                            </div>
+                            <div class="fact-item">
+                                <span class="fact-emoji">🔐</span>
+                                <span>Cybersecurity Focus</span>
+                            </div>
+                        </div>
+                    </div>
                     
-                    <div class="quick-facts">
-                        <div class="fact-item">
-                            <span class="fact-emoji">📍</span>
-                            <span>Based in Mandalay, Myanmar</span>
+                    <div class="bio-stats">
+                        <div class="stat-box">
+                            <span class="stat-number">6+</span>
+                            <span class="stat-label">Projects Completed</span>
                         </div>
-                        <div class="fact-item">
-                            <span class="fact-emoji">🎓</span>
-                            <span>Auston College (Univ. of Wolverhampton)</span>
+                        <div class="stat-box">
+                            <span class="stat-number">2</span>
+                            <span class="stat-label">Certs in Progress</span>
                         </div>
-                        <div class="fact-item">
-                            <span class="fact-emoji">💻</span>
-                            <span>Homelab Enthusiast</span>
+                        <div class="stat-box">
+                            <span class="stat-number">18</span>
+                            <span class="stat-label">Skills Mastered</span>
                         </div>
-                        <div class="fact-item">
-                            <span class="fact-emoji">🔐</span>
-                            <span>Cybersecurity Focus</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="education-section">
+            <div class="container">
+                <h2 class="section-title">Education</h2>
+                <div class="timeline">
+                    <div class="timeline-item in_progress">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Bachelor's Degree in Cybersecurity & Networking</h3>
+                                <span class="timeline-year">2026</span>
+                            </div>
+                            <p class="timeline-institution">Auston College, Myanmar</p>
+                            <p class="timeline-partner">In partnership with University of Wolverhampton, UK</p>
+                            <p class="timeline-description">Advanced studies in cybersecurity, network defense, ethical hacking, and enterprise infrastructure design with practical lab work.</p>
+                            <span class="timeline-status status-in_progress">In Progress</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Diploma in Infrastructure and Network</h3>
+                                <span class="timeline-year">2025</span>
+                            </div>
+                            <p class="timeline-institution">Auston College, Myanmar</p>
+                            <p class="timeline-partner">In partnership with Auston Institute of Management, Singapore</p>
+                            <p class="timeline-description">Specialized in network architecture, routing protocols, switching technologies, and infrastructure management with hands-on lab experience.</p>
+                            <span class="timeline-status status-completed">Completed</span>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item completed">
+                        <div class="timeline-marker"></div>
+                        <div class="timeline-content">
+                            <div class="timeline-header">
+                                <h3>Intermediate English</h3>
+                                <span class="timeline-year">2024</span>
+                            </div>
+                            <p class="timeline-institution">Headway</p>
+                            <p class="timeline-description">Advanced English proficiency for technical and professional communication.</p>
+                            <span class="timeline-status status-completed">Completed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="certifications-section">
+            <div class="container">
+                <h2 class="section-title">Certifications</h2>
+                <div class="certs-grid">
+                    <div class="certs-category">
+                        <h3 class="category-title in-progress">📖 In Progress</h3>
+                        <div class="certs-list">
+                            <div class="cert-card in-progress">
+                                <div class="cert-icon">🔒</div>
+                                <div class="cert-info">
+                                    <h4>CCNA (Cisco Certified Network Associate)</h4>
+                                    <p class="cert-issuer">Cisco</p>
+                                    <span class="cert-status">In Progress</span>
+                                </div>
+                            </div>
+                            <div class="cert-card in-progress">
+                                <div class="cert-icon">🛡️</div>
+                                <div class="cert-info">
+                                    <h4>CompTIA Security+</h4>
+                                    <p class="cert-issuer">CompTIA</p>
+                                    <span class="cert-status">In Progress</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="certs-category">
+                        <h3 class="category-title completed">✅ Completed</h3>
+                        <div class="certs-list">
+                            <div class="cert-card completed">
+                                <div class="cert-icon">🌐</div>
+                                <div class="cert-info">
+                                    <h4>HTML</h4>
+                                    <p class="cert-issuer">Self-Study</p>
+                                    <span class="cert-year">2024</span>
+                                </div>
+                            </div>
+                            <div class="cert-card completed">
+                                <div class="cert-icon">🎨</div>
+                                <div class="cert-info">
+                                    <h4>CSS</h4>
+                                    <p class="cert-issuer">Self-Study</p>
+                                    <span class="cert-year">2024</span>
+                                </div>
+                            </div>
+                            <div class="cert-card completed">
+                                <div class="cert-icon">⚙️</div>
+                                <div class="cert-info">
+                                    <h4>PHP</h4>
+                                    <p class="cert-issuer">Self-Study</p>
+                                    <span class="cert-year">2024</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="skills-section">
+            <div class="container">
+                <h2 class="section-title">Skills & Competencies</h2>
+                <div class="skills-grid">
+                    <div class="skills-category">
+                        <h3>🛠️ Technical Skills</h3>
+                        <div class="skills-cloud">
+                            <span class="skill-tag">Windows Server</span>
+                            <span class="skill-tag">Linux (Ubuntu, Kali)</span>
+                            <span class="skill-tag">Network Configuration</span>
+                            <span class="skill-tag">Routing & Switching</span>
+                            <span class="skill-tag">Virtualization</span>
+                            <span class="skill-tag">HTML/CSS</span>
+                            <span class="skill-tag">PHP</span>
+                            <span class="skill-tag">Bash Scripting</span>
+                            <span class="skill-tag">PowerShell</span>
+                            <span class="skill-tag">Active Directory</span>
+                        </div>
+                    </div>
+                    
+                    <div class="skills-category">
+                        <h3>💡 Soft Skills</h3>
+                        <div class="skills-cloud">
+                            <span class="skill-tag soft">Critical Thinking</span>
+                            <span class="skill-tag soft">Problem Solving</span>
+                            <span class="skill-tag soft">Communication</span>
+                            <span class="skill-tag soft">Leadership</span>
+                            <span class="skill-tag soft">Team Collaboration</span>
+                            <span class="skill-tag soft">Time Management</span>
+                            <span class="skill-tag soft">Analytical Skills</span>
+                            <span class="skill-tag soft">Documentation</span>
                         </div>
                     </div>
                 </div>
                 
-                <div class="bio-stats" id="bioStats"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- EDUCATION TIMELINE -->
-    <section class="education-section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="timeline" id="educationTimeline"></div>
-        </div>
-    </section>
-
-    <!-- CERTIFICATIONS -->
-    <section class="certifications-section">
-        <div class="container">
-            <h2 class="section-title">Certifications</h2>
-            <div class="certs-grid" id="certificationsGrid"></div>
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section class="skills-section">
-        <div class="container">
-            <h2 class="section-title">Skills & Competencies</h2>
-            <div class="skills-grid" id="skillsGrid"></div>
-            
-            <div class="tools-section">
-                <h3>Tools & Technologies I Use</h3>
-                <div class="tools-grid">
-                    <div class="tool-item"><span class="tool-icon">🪟</span><span>Windows Server</span></div>
-                    <div class="tool-item"><span class="tool-icon">🐧</span><span>Linux (Ubuntu/Kali)</span></div>
-                    <div class="tool-item"><span class="tool-icon">🔥</span><span>pfSense</span></div>
-                    <div class="tool-item"><span class="tool-icon">📡</span><span>Wireshark</span></div>
-                    <div class="tool-item"><span class="tool-icon">🖥️</span><span>VirtualBox/VMware</span></div>
-                    <div class="tool-item"><span class="tool-icon">🔧</span><span>PuTTY/Terminal</span></div>
-                    <div class="tool-item"><span class="tool-icon">📊</span><span>Zabbix</span></div>
-                    <div class="tool-item"><span class="tool-icon">🛡️</span><span>Nmap</span></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <script src="assets/js/data.js"></script>
-    <script src="assets/js/components.js"></script>
-    <script>
-        // Bio stats
-        (function() {
-            const d = portfolioData;
-            const techCount = d.skills.technical.length + d.skills.soft.length;
-            document.getElementById('bioStats').innerHTML = `
-                <div class="stat-box">
-                    <span class="stat-number">${d.projects.length}+</span>
-                    <span class="stat-label">Projects Completed</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">2</span>
-                    <span class="stat-label">Certs in Progress</span>
-                </div>
-                <div class="stat-box">
-                    <span class="stat-number">${techCount}</span>
-                    <span class="stat-label">Skills Mastered</span>
-                </div>
-            `;
-        })();
-        
-        // Education timeline
-        (function() {
-            const d = portfolioData;
-            let html = '';
-            d.education.forEach(edu => {
-                html += `
-                <div class="timeline-item ${edu.status}">
-                    <div class="timeline-marker"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>${edu.degree}</h3>
-                            <span class="timeline-year">${edu.year}</span>
+                <div class="tools-section">
+                    <h3>Tools & Technologies I Use</h3>
+                    <div class="tools-grid">
+                        <div class="tool-item">
+                            <span class="tool-icon">🪟</span>
+                            <span>Windows Server</span>
                         </div>
-                        <p class="timeline-institution">${edu.institution}</p>
-                        ${edu.partner ? `<p class="timeline-partner">${edu.partner}</p>` : ''}
-                        <p class="timeline-description">${edu.description}</p>
-                        <span class="timeline-status status-${edu.status}">${edu.status.charAt(0).toUpperCase() + edu.status.slice(1)}</span>
+                        <div class="tool-item">
+                            <span class="tool-icon">🐧</span>
+                            <span>Linux (Ubuntu/Kali)</span>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">📡</span>
+                            <span>Wireshark</span>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">🖥️</span>
+                            <span>VirtualBox/VMware</span>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">🔧</span>
+                            <span>PuTTY/Terminal</span>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">🛡️</span>
+                            <span>Nmap</span>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">🌐</span>
+                            <span>Cisco IOS</span>
+                        </div>
+                        <div class="tool-item">
+                            <span class="tool-icon">📋</span>
+                            <span>Active Directory</span>
+                        </div>
                     </div>
-                </div>`;
-            });
-            document.getElementById('educationTimeline').innerHTML = html;
-        })();
-        
-        // Certifications
-        (function() {
-            const d = portfolioData;
-            let html = '';
-            
-            // In progress
-            html += `
-            <div class="certs-category">
-                <h3 class="category-title in-progress">📖 In Progress</h3>
-                <div class="certs-list">`;
-            d.certifications.in_progress.forEach(cert => {
-                html += `
-                    <div class="cert-card in-progress">
-                        <div class="cert-icon">🔒</div>
-                        <div class="cert-info">
-                            <h4>${cert.name}</h4>
-                            <p class="cert-issuer">${cert.issuer}</p>
-                            <span class="cert-status">${cert.status}</span>
-                        </div>
-                    </div>`;
-            });
-            html += `</div></div>`;
-            
-            // Completed
-            html += `
-            <div class="certs-category">
-                <h3 class="category-title completed">✅ Completed</h3>
-                <div class="certs-list">`;
-            d.certifications.completed.forEach(cert => {
-                html += `
-                    <div class="cert-card completed">
-                        <div class="cert-icon">💻</div>
-                        <div class="cert-info">
-                            <h4>${cert.name}</h4>
-                            <p class="cert-issuer">${cert.issuer}</p>
-                            <span class="cert-year">${cert.year}</span>
-                        </div>
-                    </div>`;
-            });
-            html += `</div></div>`;
-            
-            document.getElementById('certificationsGrid').innerHTML = html;
-        })();
-        
-        // Skills
-        (function() {
-            const d = portfolioData;
-            let html = '';
-            
-            html += `
-            <div class="skills-category">
-                <h3>🛠️ Technical Skills</h3>
-                <div class="skills-cloud">
-                    ${d.skills.technical.map(s => `<span class="skill-tag">${s}</span>`).join('')}
                 </div>
-            </div>`;
-            
-            html += `
-            <div class="skills-category">
-                <h3>💡 Soft Skills</h3>
-                <div class="skills-cloud">
-                    ${d.skills.soft.map(s => `<span class="skill-tag soft">${s}</span>`).join('')}
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sai Aik Kwan</h3>
+                    <p>Networking & Cybersecurity Student<br>
+                    Auston College, Myanmar<br>
+                    Diploma: Auston Institute of Management, SG | Bachelor's: University of Wolverhampton, UK</p>
+                    <p class="footer-location">📍 Mandalay, Myanmar</p>
+                    <div class="footer-education-links">
+                        <a href="https://auston.edu.mm/" target="_blank" rel="noopener noreferrer">Auston College, Myanmar</a>
+                        <span>•</span>
+                        <a href="https://www.wlv.ac.uk/" target="_blank" rel="noopener noreferrer">University of Wolverhampton, UK</a>
+                    </div>
                 </div>
-            </div>`;
-            
-            document.getElementById('skillsGrid').innerHTML = html;
-        })();
-    </script>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                        <a href="https://linkedin.com/in/sai-aik-kwan" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                        <a href="mailto:saiaikkwan.pro@gmail.com" class="social-link">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sai Aik Kwan. All rights reserved.</p>
+                <p class="footer-credit">Built with HTML/CSS/JS • Hosted on GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+    
     <script src="assets/js/main.js"></script>
 </body>
 </html>
