@@ -5,17 +5,30 @@
     const themeToggle = document.getElementById('themeToggle');
     const htmlElement = document.documentElement;
     
+    // Check for saved theme preference, fall back to system preference
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme) {
         htmlElement.setAttribute('data-theme', savedTheme);
     } else {
-        htmlElement.setAttribute('data-theme', 'light');
+        // Respect system preference
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        htmlElement.setAttribute('data-theme', prefersDark ? 'dark' : 'light');
     }
     
+    // Listen for system theme changes
+    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+        // Only update if user hasn't manually set a preference
+        if (!localStorage.getItem('theme')) {
+            htmlElement.setAttribute('data-theme', e.matches ? 'dark' : 'light');
+        }
+    });
+    
+    // Toggle theme
     if (themeToggle) {
         themeToggle.addEventListener('click', () => {
             const currentTheme = htmlElement.getAttribute('data-theme');
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
             htmlElement.setAttribute('data-theme', newTheme);
             localStorage.setItem('theme', newTheme);
         });
@@ -32,6 +45,8 @@
     if (mobileMenuBtn && mobileMenu) {
         mobileMenuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('active');
+            
+            // Animate hamburger icon
             const spans = mobileMenuBtn.querySelectorAll('span');
             if (mobileMenu.classList.contains('active')) {
                 spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
@@ -44,6 +59,7 @@
             }
         });
         
+        // Close mobile menu when clicking a link
         const mobileLinks = mobileMenu.querySelectorAll('.mobile-nav-link');
         mobileLinks.forEach(link => {
             link.addEventListener('click', () => {
@@ -67,11 +83,13 @@
     if (filterButtons.length && projectCards.length) {
         filterButtons.forEach(button => {
             button.addEventListener('click', () => {
+                // Update active button
                 filterButtons.forEach(btn => btn.classList.remove('active'));
                 button.classList.add('active');
                 
                 const filter = button.getAttribute('data-filter');
                 
+                // Filter projects
                 projectCards.forEach(card => {
                     if (filter === 'all') {
                         card.style.display = 'block';
@@ -80,20 +98,44 @@
                         let match = false;
                         
                         techTags.forEach(tag => {
-                            const tech = tag.textContent.toLowerCase();
-                            if (filter === 'networking' && 
-                                (tech.includes('vlan') || tech.includes('cisco') || 
-                                 tech.includes('dhcp') || tech.includes('dns') ||
-                                 tech.includes('vpn') || tech.includes('wireguard'))) {
+                            const tech = tag.textContent.toLowerCase().trim();
+                            
+                            if (filter === 'webdev' && 
+                                (tech.includes('html') || 
+                                 tech.includes('css') || 
+                                 tech.includes('javascript') || 
+                                 tech.includes('responsive') ||
+                                 tech.includes('flexbox') || 
+                                 tech.includes('grid') ||
+                                 tech.includes('ui/ux') || 
+                                 tech.includes('multi-page') ||
+                                 tech.includes('form validation') ||
+                                 tech.includes('animations'))) {
+                                match = true;
+                            } else if (filter === 'networking' && 
+                                (tech.includes('vlan') || 
+                                 tech.includes('cisco') || 
+                                 tech.includes('dhcp') || 
+                                 tech.includes('dns') ||
+                                 tech.includes('vpn') || 
+                                 tech.includes('wireguard') ||
+                                 tech.includes('networking') || 
+                                 tech.includes('subnetting') ||
+                                 tech.includes('ospf') || 
+                                 tech.includes('acl') ||
+                                 tech.includes('wan') || 
+                                 tech.includes('packet tracer') ||
+                                 tech.includes('wi-fi'))) {
                                 match = true;
                             } else if (filter === 'security' && 
-                                      (tech.includes('kali') || tech.includes('nmap') ||
-                                       tech.includes('wireshark') || tech.includes('firewall') ||
-                                       tech.includes('security'))) {
-                                match = true;
-                            } else if (filter === 'automation' && 
-                                      (tech.includes('python') || tech.includes('bash') ||
-                                       tech.includes('script') || tech.includes('powershell'))) {
+                                (tech.includes('kali') || 
+                                 tech.includes('nmap') ||
+                                 tech.includes('wireshark') || 
+                                 tech.includes('firewall') ||
+                                 tech.includes('security') || 
+                                 tech.includes('metasploit') ||
+                                 tech.includes('enumeration') || 
+                                 tech.includes('exploitation'))) {
                                 match = true;
                             }
                         });
@@ -113,11 +155,14 @@
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const href = this.getAttribute('href');
-            if (href !== '#') {
+            if (href !== '#' && href !== '#') {
                 const target = document.querySelector(href);
                 if (target) {
                     e.preventDefault();
-                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
                 }
             }
         });
@@ -169,6 +214,7 @@
             }
         }
         
+        // Start the typing effect
         setTimeout(typeEffect, 500);
     }
 })();
@@ -191,6 +237,7 @@
         });
     }, observerOptions);
     
+    // Observe all cards and sections
     document.querySelectorAll('.project-card, .focus-card, .testimonial-card, .cert-card, .stat-box').forEach(el => {
         el.style.opacity = '0';
         el.style.transform = 'translateY(20px)';
@@ -247,4 +294,37 @@
     }
 })();
 
+// ============================================
+// COPY TO CLIPBOARD (For Discord username)
+// ============================================
+function copyToClipboard(text) {
+    navigator.clipboard.writeText(text).then(function() {
+        const discordCard = document.querySelector('.social-link-large.discord');
+        if (discordCard) {
+            const hint = discordCard.querySelector('.copy-hint');
+            if (hint) {
+                const originalText = hint.textContent;
+                hint.textContent = '✓ Copied!';
+                hint.style.color = 'var(--success)';
+                setTimeout(() => {
+                    hint.textContent = originalText;
+                    hint.style.color = 'var(--primary)';
+                }, 2000);
+            }
+        }
+    }).catch(function(err) {
+        console.error('Could not copy text: ', err);
+        const textArea = document.createElement('textarea');
+        textArea.value = text;
+        document.body.appendChild(textArea);
+        textArea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textArea);
+    });
+}
+
+// Make function globally available
+window.copyToClipboard = copyToClipboard;
+
+// Log to confirm script loaded
 console.log('✅ saiaikkwan.com - Scripts loaded successfully');
