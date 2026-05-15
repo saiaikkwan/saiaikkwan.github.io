@@ -894,6 +894,11 @@ a:hover {
     color: white;
 }
 
+.status-in_progress {
+    background-color: var(--warning);
+    color: white;
+}
+
 /* Certifications */
 .certifications-section {
     padding: var(--spacing-2xl) 0;
