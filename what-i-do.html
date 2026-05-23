@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What Sai Aik Kwan offers — web development, network setup, security assessment, and collaboration opportunities.">
+    <title>What I Do - Sai Aik Kwan</title>
+    
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    
+    <meta property="og:title" content="What I Do - Sai Aik Kwan">
+    <meta property="og:description" content="Web development, network setup, security assessment, and collaboration opportunities.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://saiaikkwan.github.io/what-i-do">
+    <meta property="og:image" content="https://saiaikkwan.github.io/assets/images/profile.jpg">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="What I Do - Sai Aik Kwan">
+    <meta name="twitter:description" content="Web development, network setup, and security assessment by a Networking & Cybersecurity student.">
+    
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <a href="index.html" class="logo">
+                <span class="logo-text">Sai Aik Kwan</span>
+                <span class="logo-badge">.com</span>
+            </a>
+            <nav class="nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-link">Home</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="projects.html" class="nav-link">Projects</a></li>
+                    <li><a href="what-i-do.html" class="nav-link active">What I Do</a></li>
+                    <li><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+                <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
+                    </svg>
+                </a>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-nav-list">
+                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
+                <li><a href="what-i-do.html" class="mobile-nav-link">What I Do</a></li>
+                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+    
+    <main>
+        <!-- PAGE HEADER -->
+        <section class="page-header">
+            <div class="container">
+                <h1 class="page-title">What I Do</h1>
+                <p class="page-subtitle">How I can help with web development, networking, and security</p>
+            </div>
+        </section>
+
+        <!-- HONEST INTRO -->
+        <section style="padding: var(--spacing-xl) 0;">
+            <div class="container">
+                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                    <div style="background-color: var(--card-bg); border-radius: 12px; padding: var(--spacing-lg); box-shadow: var(--card-shadow); border-left: 4px solid var(--primary); text-align: left;">
+                        <p style="color: var(--text-secondary); font-size: 1.05rem; margin: 0;">
+                            💡 <strong>Where I'm at:</strong> I'm a Networking & Cybersecurity student actively building practical skills through hands-on projects. 
+                            While I'm completing my CCNA and Security+ certifications, I'm open to <strong>small projects, internships, and learning opportunities</strong> 
+                            where I can contribute meaningfully and grow.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES CARDS -->
+        <section style="padding: 0 0 var(--spacing-2xl) 0;">
+            <div class="container">
+                <div class="projects-grid" style="grid-template-columns: repeat(3, 1fr);">
+                    
+                    <!-- Web Development -->
+                    <div class="project-card" style="border-top: 4px solid var(--primary);">
+                        <div class="project-content" style="text-align: center; padding: var(--spacing-xl);">
+                            <div style="font-size: 3rem; margin-bottom: var(--spacing-sm);">🌐</div>
+                            <h3 class="project-title" style="margin-bottom: var(--spacing-sm);">Web Development</h3>
+                            <p class="project-description" style="margin-bottom: var(--spacing-md);">
+                                Clean, responsive websites built with modern HTML, CSS, and JavaScript. From portfolio sites to educational platforms.
+                            </p>
+                            <div style="text-align: left; margin-bottom: var(--spacing-md);">
+                                <ul style="color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.8;">
+                                    <li>Personal & portfolio websites</li>
+                                    <li>Login interfaces & dashboards</li>
+                                    <li>Multi-page educational sites</li>
+                                    <li>Responsive mobile-first design</li>
+                                    <li>Light/dark theme implementation</li>
+                                </ul>
+                            </div>
+                            <a href="projects.html" class="btn btn-outline btn-sm" style="width: 100%;">See Web Projects →</a>
+                        </div>
+                    </div>
+
+                    <!-- Network Setup -->
+                    <div class="project-card" style="border-top: 4px solid var(--warning);">
+                        <div class="project-content" style="text-align: center; padding: var(--spacing-xl);">
+                            <div style="font-size: 3rem; margin-bottom: var(--spacing-sm);">🔧</div>
+                            <h3 class="project-title" style="margin-bottom: var(--spacing-sm);">Network Setup & Configuration</h3>
+                            <p class="project-description" style="margin-bottom: var(--spacing-md);">
+                                Small to medium network design with proper segmentation, security, and documentation.
+                            </p>
+                            <div style="text-align: left; margin-bottom: var(--spacing-md);">
+                                <ul style="color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.8;">
+                                    <li>SOHO network design & setup</li>
+                                    <li>VLAN segmentation & subnetting</li>
+                                    <li>DHCP & DNS configuration</li>
+                                    <li>Router & switch setup (Cisco)</li>
+                                    <li>Network documentation</li>
+                                </ul>
+                            </div>
+                            <a href="projects.html" class="btn btn-outline btn-sm" style="width: 100%;">See Network Projects →</a>
+                        </div>
+                    </div>
+
+                    <!-- Security Assessment -->
+                    <div class="project-card" style="border-top: 4px solid var(--danger);">
+                        <div class="project-content" style="text-align: center; padding: var(--spacing-xl);">
+                            <div style="font-size: 3rem; margin-bottom: var(--spacing-sm);">🔐</div>
+                            <h3 class="project-title" style="margin-bottom: var(--spacing-sm);">Security Assessment</h3>
+                            <p class="project-description" style="margin-bottom: var(--spacing-md);">
+                                Basic vulnerability scanning and security recommendations for small networks and systems.
+                            </p>
+                            <div style="text-align: left; margin-bottom: var(--spacing-md);">
+                                <ul style="color: var(--text-secondary); font-size: 0.9rem; padding-left: 1.2rem; line-height: 1.8;">
+                                    <li>Network vulnerability scanning</li>
+                                    <li>Port & service enumeration</li>
+                                    <li>Security hardening guidance</li>
+                                    <li>Basic penetration testing</li>
+                                    <li>Documented findings & reports</li>
+                                </ul>
+                            </div>
+                            <a href="projects.html" class="btn btn-outline btn-sm" style="width: 100%;">See Security Projects →</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- WHAT I'M LEARNING -->
+        <section class="testimonials" style="background-color: var(--bg-primary);">
+            <div class="container">
+                <h2 class="section-title">Currently Expanding My Skills</h2>
+                <p class="section-subtitle" style="text-align: center; margin-bottom: var(--spacing-xl);">
+                    I believe in being honest about where I am and where I'm going.
+                </p>
+                
+                <div class="testimonials-grid">
+                    <div class="testimonial-card">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--spacing-sm);">📚</div>
+                        <h3 style="margin-bottom: var(--spacing-xs);">Certifications in Progress</h3>
+                        <p class="testimonial-text" style="font-style: normal;">
+                            Currently preparing for <strong>CCNA</strong> (Cisco Certified Network Associate) and 
+                            <strong>CompTIA Security+</strong> to deepen my networking and security expertise.
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Expected: 2026</strong>
+                            <span>CCNA | Security+</span>
+                        </div>
+                    </div>
+                    
+                    <div class="testimonial-card">
+                        <div style="font-size: 2.5rem; margin-bottom: var(--spacing-sm);">🎯</div>
+                        <h3 style="margin-bottom: var(--spacing-xs);">What I'm Looking For</h3>
+                        <p class="testimonial-text" style="font-style: normal;">
+                            Open to <strong>internships, entry-level roles, freelance projects,</strong> and 
+                            <strong>collaborations</strong> where I can apply my skills and continue learning 
+                            from experienced professionals.
+                        </p>
+                        <div class="testimonial-author">
+                            <strong>Let's Work Together</strong>
+                            <span>Remote or Mandalay-based</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="text-align: center; margin-top: var(--spacing-xl);">
+                    <a href="contact.html" class="btn btn-primary">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l1.36-1.36a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                        </svg>
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>Sai Aik Kwan</h3>
+                    <p>Networking & Cybersecurity Student<br>
+                    Auston College, Myanmar<br>
+                    Diploma: Auston Institute of Management, SG | Bachelor's: University of Wolverhampton, UK</p>
+                    <p class="footer-location">📍 Mandalay, Myanmar</p>
+                    <div class="footer-education-links">
+                        <a href="https://auston.edu.mm/" target="_blank" rel="noopener noreferrer">Auston College, Myanmar</a>
+                        <span>•</span>
+                        <a href="https://www.wlv.ac.uk/" target="_blank" rel="noopener noreferrer">University of Wolverhampton, UK</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="what-i-do.html">What I Do</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-social">
+                    <h4>Connect</h4>
+                    <div class="social-links">
+                        <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
+                        <a href="https://linkedin.com/in/sai-aik-kwan" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
+                        <a href="mailto:saiaikkwan.pro@gmail.com" class="social-link">Email</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Sai Aik Kwan. All rights reserved.</p>
+                <p class="footer-credit">Built with HTML/CSS/JS • Hosted on GitHub Pages</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
