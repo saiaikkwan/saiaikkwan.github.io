@@ -1486,6 +1486,15 @@ a:hover {
 }
 
 /* ============================================
+   SERVICES GRID (What I Do Page)
+   ============================================ */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+/* ============================================
    RESPONSIVE DESIGN
    ============================================ */
 @media (max-width: 992px) {
@@ -1514,6 +1523,10 @@ a:hover {
     .footer-content {
         grid-template-columns: 1fr 1fr;
     }
+
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }    
 }
 
 @media (max-width: 768px) {
@@ -1582,6 +1595,10 @@ a:hover {
         padding: 12px 16px;
         gap: 10px;
     }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }    
 }
 
 @media (max-width: 480px) {
