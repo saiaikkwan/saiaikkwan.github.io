@@ -1401,6 +1401,32 @@ a:hover {
 }
 
 /* ============================================
+   LOADING SPINNER
+   ============================================ */
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
+
+.loading-spinner {
+    text-align: center;
+    padding: 2rem;
+}
+
+.loading-spinner div {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top-color: var(--primary);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin: 0 auto 1rem;
+}
+
+.loading-spinner p {
+    color: var(--text-muted);
+}
+
+/* ============================================
    FOOTER
    ============================================ */
 .footer {

@@ -1,0 +1,83 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "Lab Login Portal - Frontend",
+            "description": "A clean, responsive login interface for a homelab management portal. Features form validation, dark/light mode toggle, and accessibility-first design principles.",
+            "github": "https://github.com/saiaikkwan/lab-login-frontend",
+            "image": "assets/images/project01.png",
+            "category": "webdev",
+            "tech": ["HTML5", "CSS3", "JavaScript", "Form Validation", "Responsive Design"],
+            "featured": true,
+            "date": "2024"
+        },
+        {
+            "id": 2,
+            "title": "Personal Portfolio Website",
+            "description": "A responsive portfolio site with theme toggle, project showcase, contact form, and smooth scroll animations. Built from scratch with modern CSS techniques.",
+            "github": "https://github.com/saiaikkwan/portfolio",
+            "image": "assets/images/project02.png",
+            "category": "webdev",
+            "tech": ["HTML5", "CSS3", "JavaScript", "Flexbox", "CSS Grid", "CSS Animations"],
+            "featured": true,
+            "date": "2024"
+        },
+        {
+            "id": 3,
+            "title": "Cybersecurity Learning Hub",
+            "description": "A multi-page educational website introducing cybersecurity fundamentals: common threats, defense strategies, encryption basics, and safe browsing practices for beginners.",
+            "github": "https://github.com/saiaikkwan/cybersec-learning-hub",
+            "image": "assets/images/project03.png",
+            "category": "webdev",
+            "tech": ["HTML5", "CSS3", "JavaScript", "UI/UX Design", "Multi-page Site"],
+            "featured": true,
+            "date": "2024"
+        },
+        {
+            "id": 4,
+            "title": "SOHO Network Design & Setup",
+            "description": "Designed and documented a Small Office/Home Office network with VLAN segmentation, DHCP server configuration, DNS setup, and secure wireless access using enterprise best practices.",
+            "github": "https://github.com/saiaikkwan/soho-network",
+            "image": "assets/images/project04.png",
+            "category": "networking",
+            "tech": ["Networking", "VLAN", "DHCP", "DNS", "Subnetting", "Wi-Fi Security"],
+            "featured": false,
+            "date": "2025"
+        },
+        {
+            "id": 5,
+            "title": "Enterprise Network Simulation",
+            "description": "Built a multi-site enterprise network in Cisco Packet Tracer with OSPF dynamic routing, inter-VLAN routing, access control lists, and redundant WAN links between branch offices.",
+            "github": "https://github.com/saiaikkwan/enterprise-pkt",
+            "image": "assets/images/project05.png",
+            "category": "networking",
+            "tech": ["Cisco", "Packet Tracer", "OSPF", "ACL", "VLAN", "WAN"],
+            "featured": false,
+            "date": "2025"
+        },
+        {
+            "id": 6,
+            "title": "Kali Linux Pentesting Lab",
+            "description": "Set up Metasploitable 2 as a vulnerable target and performed full reconnaissance, vulnerability scanning, and controlled exploitation using Kali Linux tools with documented methodology.",
+            "github": "https://github.com/saiaikkwan/kali-pentest-lab",
+            "image": "assets/images/project06.png",
+            "category": "security",
+            "tech": ["Kali Linux", "Metasploit", "Nmap", "Wireshark", "Enumeration", "Exploitation"],
+            "featured": false,
+            "date": "2025"
+        }
+    ],
+    
+    "categories": [
+        { "id": "all", "name": "All Projects", "icon": "📁" },
+        { "id": "webdev", "name": "Web Development", "icon": "🌐" },
+        { "id": "networking", "name": "Networking", "icon": "🔌" },
+        { "id": "security", "name": "Security", "icon": "🔒" }
+    ],
+    
+    "filterKeywords": {
+        "webdev": ["html", "css", "javascript", "responsive", "flexbox", "grid", "ui/ux", "multi-page", "form validation", "animations"],
+        "networking": ["vlan", "cisco", "dhcp", "dns", "subnetting", "ospf", "acl", "wan", "packet tracer", "wi-fi", "networking"],
+        "security": ["kali", "nmap", "wireshark", "security", "metasploit", "enumeration", "exploitation", "firewall", "pentesting"]
+    }
+}
