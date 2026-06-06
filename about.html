@@ -19,70 +19,18 @@
     <meta name="twitter:description" content="Networking & Cybersecurity Student at Auston College, Myanmar.">
     
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <span class="logo-text">Sai Aik Kwan</span>
-                <span class="logo-badge">.com</span>
-            </a>
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link active">About</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="what-i-do.html" class="nav-link">What I Do</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-        <div class="mobile-menu" id="mobileMenu">
-            <ul class="mobile-nav-list">
-                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-                <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
-                <li><a href="what-i-do.html" class="mobile-nav-link">What I Do</a></li>
-                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
     
     <main>
         <section class="page-header">
             <div class="container">
-                <h1 class="page-title">About Me</h1>
+                <h1 class="page-title"><i class="fas fa-user-astronaut"></i> About Me</h1>
                 <p class="page-subtitle">Networking & Cybersecurity student building practical skills through hands-on learning</p>
             </div>
         </section>
@@ -91,7 +39,7 @@
             <div class="container">
                 <div class="bio-grid">
                     <div class="bio-content">
-                        <h2>Hi, I'm Sai Aik Kwan</h2>
+                        <h2><i class="fas fa-waveform"></i> Hi, I'm Sai Aik Kwan</h2>
                         <p class="bio-text">
                             I'm a Networking and Cybersecurity student at 
                             <strong><a href="https://auston.edu.mm/" target="_blank" rel="noopener noreferrer">Auston College, Myanmar</a></strong>, 
@@ -102,31 +50,30 @@
                             Based in Mandalay, I'm passionate about building secure and efficient network infrastructures.
                         </p>
                         <p class="bio-text">
-                            My journey into networking began with a curiosity about how data travels across the internet. 
+                            <i class="fas fa-rocket"></i> My journey into networking began with a curiosity about how data travels across the internet. 
                             That curiosity evolved into a dedicated homelab where I practice enterprise-level networking 
                             concepts, security configurations, and system administration.
                         </p>
                         <p class="bio-text">
-                            I'm currently preparing for <strong>CCNA</strong> and <strong>CompTIA Security+</strong> certifications 
+                            <i class="fas fa-certificate"></i> I'm currently preparing for <strong>CCNA</strong> and <strong>CompTIA Security+</strong> certifications 
                             while documenting my learning through practical projects on GitHub.
                         </p>
                         
                         <div class="quick-facts">
-                            <!-- Quick facts will be loaded from data.js -->
                             <div class="fact-item">
-                                <span class="fact-emoji">📍</span>
+                                <i class="fas fa-map-marker-alt fact-emoji"></i>
                                 <span>Based in Mandalay, Myanmar</span>
                             </div>
                             <div class="fact-item">
-                                <span class="fact-emoji">🎓</span>
+                                <i class="fas fa-university fact-emoji"></i>
                                 <span>Auston College, Myanmar</span>
                             </div>
                             <div class="fact-item">
-                                <span class="fact-emoji">💻</span>
+                                <i class="fas fa-server fact-emoji"></i>
                                 <span>Homelab Enthusiast</span>
                             </div>
                             <div class="fact-item">
-                                <span class="fact-emoji">🔐</span>
+                                <i class="fas fa-shield-alt fact-emoji"></i>
                                 <span>Cybersecurity Focus</span>
                             </div>
                         </div>
@@ -135,15 +82,15 @@
                     <div class="bio-stats">
                         <div class="stat-box">
                             <span class="stat-number">6+</span>
-                            <span class="stat-label">Projects Completed</span>
+                            <span class="stat-label"><i class="fas fa-code-branch"></i> Projects Completed</span>
                         </div>
                         <div class="stat-box">
                             <span class="stat-number">2</span>
-                            <span class="stat-label">Certs in Progress</span>
+                            <span class="stat-label"><i class="fas fa-certificate"></i> Certs in Progress</span>
                         </div>
                         <div class="stat-box">
-                            <span class="stat-number">18</span>
-                            <span class="stat-label">Skills Mastered</span>
+                            <span class="stat-number">19</span>
+                            <span class="stat-label"><i class="fas fa-crown"></i> Skills Mastered</span>
                         </div>
                     </div>
                 </div>
@@ -152,46 +99,46 @@
 
         <section class="education-section">
             <div class="container">
-                <h2 class="section-title">Education</h2>
+                <h2 class="section-title"><i class="fas fa-graduation-cap"></i> Education</h2>
                 <div class="timeline">
                     <div class="timeline-item in_progress">
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-marker"><i class="fas fa-hourglass-half fa-spin"></i></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Bachelor's Degree in Cybersecurity & Networking</h3>
+                                <h3><i class="fas fa-graduation-cap"></i> Bachelor's Degree in Cybersecurity & Networking</h3>
                                 <span class="timeline-year">2026</span>
                             </div>
                             <p class="timeline-institution">Auston College, Myanmar</p>
-                            <p class="timeline-partner">In partnership with University of Wolverhampton, UK</p>
+                            <p class="timeline-partner"><i class="fas fa-handshake"></i> In partnership with University of Wolverhampton, UK</p>
                             <p class="timeline-description">Advanced studies in cybersecurity, network defense, ethical hacking, and enterprise infrastructure design with practical lab work.</p>
-                            <span class="timeline-status status-in_progress">In Progress</span>
+                            <span class="timeline-status status-in_progress"><i class="fas fa-spinner fa-pulse"></i> In Progress</span>
                         </div>
                     </div>
                     
                     <div class="timeline-item completed">
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-marker"><i class="fas fa-check-circle"></i></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Diploma in Infrastructure and Network</h3>
+                                <h3><i class="fas fa-graduation-cap"></i> Diploma in Infrastructure and Network</h3>
                                 <span class="timeline-year">2025</span>
                             </div>
                             <p class="timeline-institution">Auston College, Myanmar</p>
-                            <p class="timeline-partner">In partnership with Auston Institute of Management, Singapore</p>
+                            <p class="timeline-partner"><i class="fas fa-handshake"></i> In partnership with Auston Institute of Management, Singapore</p>
                             <p class="timeline-description">Specialized in network architecture, routing protocols, switching technologies, and infrastructure management with hands-on lab experience.</p>
-                            <span class="timeline-status status-completed">Completed</span>
+                            <span class="timeline-status status-completed"><i class="fas fa-check"></i> Completed</span>
                         </div>
                     </div>
                     
                     <div class="timeline-item completed">
-                        <div class="timeline-marker"></div>
+                        <div class="timeline-marker"><i class="fas fa-check-circle"></i></div>
                         <div class="timeline-content">
                             <div class="timeline-header">
-                                <h3>Intermediate English</h3>
+                                <h3><i class="fas fa-language"></i> Intermediate English</h3>
                                 <span class="timeline-year">2024</span>
                             </div>
                             <p class="timeline-institution">Headway</p>
                             <p class="timeline-description">Advanced English proficiency for technical and professional communication.</p>
-                            <span class="timeline-status status-completed">Completed</span>
+                            <span class="timeline-status status-completed"><i class="fas fa-check"></i> Completed</span>
                         </div>
                     </div>
                 </div>
@@ -200,35 +147,41 @@
 
         <section class="certifications-section">
             <div class="container">
-                <h2 class="section-title">Certifications</h2>
+                <h2 class="section-title"><i class="fas fa-certificate"></i> Certifications</h2>
                 <div class="certs-grid">
                     <div class="certs-category">
-                        <h3 class="category-title in-progress">📖 In Progress</h3>
+                        <h3 class="category-title in-progress"><i class="fas fa-hourglass-half fa-spin"></i> In Progress</h3>
                         <div class="certs-list">
                             <div class="cert-card in-progress">
-                                <div class="cert-icon">🔒</div>
+                                <div class="cert-icon">
+                                    <img src="assets/images/cisco.svg" alt="Cisco" style="width: 40px; height: 30px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <i class="fas fa-network-wired" style="display: none;"></i>
+                                </div>
                                 <div class="cert-info">
                                     <h4>CCNA (Cisco Certified Network Associate)</h4>
-                                    <p class="cert-issuer">Cisco</p>
-                                    <span class="cert-status">In Progress</span>
+                                    <p class="cert-issuer"><i class="fab fa-cisco"></i> Cisco</p>
+                                    <span class="cert-status"><i class="fas fa-spinner fa-pulse"></i> In Progress</span>
                                 </div>
                             </div>
                             <div class="cert-card in-progress">
-                                <div class="cert-icon">🛡️</div>
+                                <div class="cert-icon">
+                                    <img src="assets/images/comptia.svg" alt="CompTIA" style="width: 40px; height: 30px;" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                                    <i class="fas fa-shield-alt" style="display: none;"></i>
+                                </div>
                                 <div class="cert-info">
                                     <h4>CompTIA Security+</h4>
-                                    <p class="cert-issuer">CompTIA</p>
-                                    <span class="cert-status">In Progress</span>
+                                    <p class="cert-issuer"><i class="fas fa-shield-alt"></i> CompTIA</p>
+                                    <span class="cert-status"><i class="fas fa-spinner fa-pulse"></i> In Progress</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     
                     <div class="certs-category">
-                        <h3 class="category-title completed">✅ Completed</h3>
+                        <h3 class="category-title completed"><i class="fas fa-check-circle"></i> Completed</h3>
                         <div class="certs-list">
                             <div class="cert-card completed">
-                                <div class="cert-icon">🌐</div>
+                                <div class="cert-icon"><i class="fab fa-html5" style="color: #E34F26;"></i></div>
                                 <div class="cert-info">
                                     <h4>HTML</h4>
                                     <p class="cert-issuer">Self-Study</p>
@@ -236,7 +189,7 @@
                                 </div>
                             </div>
                             <div class="cert-card completed">
-                                <div class="cert-icon">🎨</div>
+                                <div class="cert-icon"><i class="fab fa-css3-alt" style="color: #1572B6;"></i></div>
                                 <div class="cert-info">
                                     <h4>CSS</h4>
                                     <p class="cert-issuer">Self-Study</p>
@@ -244,7 +197,15 @@
                                 </div>
                             </div>
                             <div class="cert-card completed">
-                                <div class="cert-icon">⚙️</div>
+                                <div class="cert-icon"><i class="fab fa-js" style="color: #F7DF1E;"></i></div>
+                                <div class="cert-info">
+                                    <h4>JavaScript</h4>
+                                    <p class="cert-issuer">Self-Study</p>
+                                    <span class="cert-year">2024</span>
+                                </div>
+                            </div>
+                            <div class="cert-card completed">
+                                <div class="cert-icon"><i class="fab fa-php" style="color: #777BB4;"></i></div>
                                 <div class="cert-info">
                                     <h4>PHP</h4>
                                     <p class="cert-issuer">Self-Study</p>
@@ -259,72 +220,74 @@
 
         <section class="skills-section">
             <div class="container">
-                <h2 class="section-title">Skills & Competencies</h2>
+                <h2 class="section-title"><i class="fas fa-tools"></i> Skills & Competencies</h2>
                 <div class="skills-grid">
                     <div class="skills-category">
-                        <h3>🛠️ Technical Skills</h3>
+                        <h3><i class="fas fa-microchip"></i> Technical Skills</h3>
                         <div class="skills-cloud">
-                            <span class="skill-tag">Windows Server</span>
-                            <span class="skill-tag">Linux (Ubuntu, Kali)</span>
-                            <span class="skill-tag">Network Configuration</span>
-                            <span class="skill-tag">Routing & Switching</span>
-                            <span class="skill-tag">Virtualization</span>
-                            <span class="skill-tag">HTML/CSS</span>
-                            <span class="skill-tag">PHP</span>
-                            <span class="skill-tag">Bash Scripting</span>
-                            <span class="skill-tag">PowerShell</span>
-                            <span class="skill-tag">Active Directory</span>
+                            <span class="skill-tag tech-skill"><i class="fab fa-windows"></i> Windows Server</span>
+                            <span class="skill-tag tech-skill"><i class="fab fa-linux"></i> Linux (Ubuntu, Kali)</span>
+                            <span class="skill-tag tech-skill"><i class="fas fa-network-wired"></i> Network Configuration</span>
+                            <span class="skill-tag tech-skill"><i class="fas fa-route"></i> Routing & Switching</span>
+                            <span class="skill-tag tech-skill"><i class="fas fa-desktop"></i> Virtualization</span>
+                            <span class="skill-tag tech-skill"><i class="fab fa-html5" style="color: #E34F26;"></i> HTML</span>
+                            <span class="skill-tag tech-skill"><i class="fab fa-css3-alt" style="color: #1572B6;"></i> CSS</span>
+                            <span class="skill-tag tech-skill"><i class="fab fa-js" style="color: #F7DF1E;"></i> JavaScript</span>
+                            <span class="skill-tag tech-skill"><i class="fab fa-php" style="color: #777BB4;"></i> PHP</span>
+                            <span class="skill-tag tech-skill"><i class="fas fa-terminal"></i> Bash Scripting</span>
+                            <span class="skill-tag tech-skill"><i class="fab fa-microsoft"></i> PowerShell</span>
+                            <span class="skill-tag tech-skill"><i class="fas fa-users"></i> Active Directory</span>
                         </div>
                     </div>
                     
                     <div class="skills-category">
-                        <h3>💡 Soft Skills</h3>
+                        <h3><i class="fas fa-heart"></i> Soft Skills</h3>
                         <div class="skills-cloud">
-                            <span class="skill-tag soft">Critical Thinking</span>
-                            <span class="skill-tag soft">Problem Solving</span>
-                            <span class="skill-tag soft">Communication</span>
-                            <span class="skill-tag soft">Leadership</span>
-                            <span class="skill-tag soft">Team Collaboration</span>
-                            <span class="skill-tag soft">Time Management</span>
-                            <span class="skill-tag soft">Analytical Skills</span>
-                            <span class="skill-tag soft">Documentation</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-brain"></i> Critical Thinking</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-puzzle-piece"></i> Problem Solving</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-comments"></i> Communication</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-chart-line"></i> Leadership</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-users"></i> Team Collaboration</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-clock"></i> Time Management</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-chart-bar"></i> Analytical Skills</span>
+                            <span class="skill-tag soft-skill"><i class="fas fa-file-alt"></i> Documentation</span>
                         </div>
                     </div>
                 </div>
                 
                 <div class="tools-section">
-                    <h3>Tools & Technologies I Use</h3>
+                    <h3><i class="fas fa-laptop-code"></i> Tools & Technologies I Use</h3>
                     <div class="tools-grid">
                         <div class="tool-item">
-                            <span class="tool-icon">🪟</span>
+                            <i class="fab fa-windows tool-icon"></i>
                             <span>Windows Server</span>
                         </div>
                         <div class="tool-item">
-                            <span class="tool-icon">🐧</span>
+                            <i class="fab fa-linux tool-icon"></i>
                             <span>Linux (Ubuntu/Kali)</span>
                         </div>
                         <div class="tool-item">
-                            <span class="tool-icon">📡</span>
+                            <i class="fas fa-chart-bar tool-icon"></i>
                             <span>Wireshark</span>
                         </div>
                         <div class="tool-item">
-                            <span class="tool-icon">🖥️</span>
+                            <i class="fas fa-desktop tool-icon"></i>
                             <span>VirtualBox/VMware</span>
                         </div>
                         <div class="tool-item">
-                            <span class="tool-icon">🔧</span>
+                            <i class="fas fa-terminal tool-icon"></i>
                             <span>PuTTY/Terminal</span>
                         </div>
                         <div class="tool-item">
-                            <span class="tool-icon">🛡️</span>
+                            <i class="fas fa-eye tool-icon"></i>
                             <span>Nmap</span>
                         </div>
                         <div class="tool-item">
-                            <span class="tool-icon">🌐</span>
+                            <i class="fas fa-network-wired tool-icon"></i>
                             <span>Cisco IOS</span>
                         </div>
                         <div class="tool-item">
-                            <span class="tool-icon">📋</span>
+                            <i class="fas fa-users tool-icon"></i>
                             <span>Active Directory</span>
                         </div>
                     </div>
@@ -333,41 +296,7 @@
         </section>
     </main>
     
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Sai Aik Kwan</h3>
-                    <p>Networking & Cybersecurity Student<br>
-                    <a href="https://auston.edu.mm/" target="_blank" rel="noopener noreferrer">Auston College, Myanmar</a><br>
-                    Diploma: <a href="https://auston.edu.sg/" target="_blank" rel="noopener noreferrer">Auston Institute of Management, SG</a> | Bachelor's: <a href="https://www.wlv.ac.uk/" target="_blank" rel="noopener noreferrer">University of Wolverhampton, UK</a></p>
-                    <p class="footer-location">📍 Mandalay, Myanmar</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="what-i-do.html">What I Do</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="social-link">GitHub</a>
-                        <a href="https://linkedin.com/in/sai-aik-kwan" target="_blank" rel="noopener noreferrer" class="social-link">LinkedIn</a>
-                        <a href="mailto:saiaikkwan.pro@gmail.com" class="social-link">Email</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sai Aik Kwan. All rights reserved.</p>
-                <p class="footer-credit">Built with HTML/CSS/JS • Hosted on GitHub Pages</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
     
     <script src="assets/js/main.js"></script>
 </body>

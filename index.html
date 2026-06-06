@@ -6,111 +6,46 @@
     <meta name="description" content="Sai Aik Kwan - Networking & Cybersecurity Student at Auston College, Myanmar. CCNA & Security+ in progress. Homelab enthusiast.">
     <title>Sai Aik Kwan - Networking & Cybersecurity Student</title>
     
-    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    <!-- Open Graph / Social Media Sharing -->
     <meta property="og:title" content="Sai Aik Kwan - Networking & Cybersecurity Student">
-    <meta property="og:description" content="Networking & Cybersecurity Student at Auston College, Myanmar. CCNA & Security+ in progress. Homelab enthusiast building practical skills.">
+    <meta property="og:description" content="Networking & Cybersecurity Student at Auston College, Myanmar. CCNA & Security+ in progress.">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://saiaikkwan.github.io">
     <meta property="og:image" content="https://saiaikkwan.github.io/assets/images/profile.jpg">
-    <meta property="og:image:width" content="500">
-    <meta property="og:image:height" content="500">
     
-    <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Sai Aik Kwan - Networking & Cybersecurity Student">
-    <meta name="twitter:description" content="Networking & Cybersecurity Student at Auston College, Myanmar. CCNA & Security+ in progress.">
-    <meta name="twitter:image" content="https://saiaikkwan.github.io/assets/images/profile.jpg">
+    <meta name="twitter:description" content="Networking & Cybersecurity Student at Auston College, Myanmar.">
     
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header">
-        <div class="container header-container">
-            <a href="index.html" class="logo">
-                <span class="logo-text">Sai Aik Kwan</span>
-                <span class="logo-badge">.com</span>
-            </a>
-            
-            <nav class="nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-link active">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="projects.html" class="nav-link">Projects</a></li>
-                    <li><a href="what-i-do.html" class="nav-link">What I Do</a></li>
-                    <li><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-            </nav>
-            
-            <div class="header-actions">
-                <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-                    <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                    <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                </button>
-                <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="github-link" aria-label="GitHub">
-                    <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
-                    </svg>
-                </a>
-                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </div>
-        </div>
-        
-        <div class="mobile-menu" id="mobileMenu">
-            <ul class="mobile-nav-list">
-                <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-                <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                <li><a href="projects.html" class="mobile-nav-link">Projects</a></li>
-                <li><a href="what-i-do.html" class="mobile-nav-link">What I Do</a></li>
-                <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
-            </ul>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
     
     <main>
-        <!-- HERO SECTION -->
         <section class="hero">
             <div class="container hero-container">
                 <div class="hero-image">
                     <div class="profile-placeholder">
                         <img src="assets/images/profile.jpg" alt="Sai Aik Kwan" class="profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
                         <div class="profile-fallback" style="display: none;">
-                            <svg width="80" height="80" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-                            </svg>
+                            <i class="fas fa-user-circle" style="font-size: 80px;"></i>
                         </div>
                     </div>
                     <div class="status-badge">
-                        <span class="status-dot"></span> CCNA & Security+ (In Progress)
+                        <span class="status-dot"></span> 
+                        <i class="fas fa-graduation-cap" style="color: var(--primary);"></i> CCNA & Security+ (In Progress)
                     </div>
                 </div>
                 
                 <div class="hero-content">
                     <span class="greeting">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z"/>
-                        </svg>
+                        <i class="fas fa-smile-wink" style="color: var(--primary);"></i>
                         Hi, I'm
                     </span>
                     <h1 class="hero-title">Sai Aik Kwan</h1>
@@ -119,9 +54,7 @@
                         <span class="cursor">|</span>
                     </p>
                     <p class="hero-location">
-                        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
-                        </svg>
+                        <i class="fas fa-map-marker-alt"></i>
                         Mandalay, Myanmar
                     </p>
                     <p class="hero-description">
@@ -134,19 +67,11 @@
                     </p>
                     <div class="hero-buttons">
                         <a href="projects.html" class="btn btn-primary">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <rect x="2" y="2" width="20" height="20" rx="2.18"></rect>
-                                <line x1="8" y1="2" x2="8" y2="22"></line>
-                                <line x1="16" y1="2" x2="16" y2="22"></line>
-                                <line x1="2" y1="8" x2="22" y2="8"></line>
-                                <line x1="2" y1="16" x2="22" y2="16"></line>
-                            </svg>
-                            View My Projects
+                            <i class="fas fa-folder-open"></i>
+                            View My Projects <i class="fas fa-arrow-right"></i>
                         </a>
                         <a href="contact.html" class="btn btn-secondary">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8 10a16 16 0 0 0 6 6l1.36-1.36a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                            </svg>
+                            <i class="fas fa-envelope"></i>
                             Contact Me
                         </a>
                     </div>
@@ -154,14 +79,14 @@
                     <div class="hero-stats">
                         <div class="stat-item">
                             <span class="stat-value">6+</span>
-                            <span class="stat-label">Projects</span>
+                            <span class="stat-label"><i class="fas fa-code-branch"></i> Projects</span>
                         </div>
                         <div class="stat-item">
                             <span class="stat-value">2</span>
-                            <span class="stat-label">Certs in Progress</span>
+                            <span class="stat-label"><i class="fas fa-certificate"></i> Certs in Progress</span>
                         </div>
                         <div class="stat-item">
-                            <span class="stat-value">GitHub</span>
+                            <span class="stat-value"><i class="fab fa-github"></i></span>
                             <span class="stat-label">saiaikkwan</span>
                         </div>
                     </div>
@@ -169,22 +94,21 @@
             </div>
         </section>
 
-        <!-- CURRENT FOCUS SECTION -->
         <section class="current-focus">
             <div class="container">
                 <div class="focus-grid">
                     <div class="focus-card">
-                        <div class="focus-icon">📚</div>
+                        <i class="fas fa-book-open focus-icon" style="color: var(--primary);"></i>
                         <h3>Currently Studying</h3>
                         <p>CCNA Certification Preparation<br>CompTIA Security+ Coursework</p>
                     </div>
                     <div class="focus-card">
-                        <div class="focus-icon">🔬</div>
+                        <i class="fas fa-microscope focus-icon" style="color: var(--primary);"></i>
                         <h3>Lab Focus</h3>
                         <p>Active Directory Deployment<br>Network Segmentation & Security</p>
                     </div>
                     <div class="focus-card">
-                        <div class="focus-icon">🎯</div>
+                        <i class="fas fa-bullseye focus-icon" style="color: var(--primary);"></i>
                         <h3>Learning Goal</h3>
                         <p>Network Security Fundamentals<br>Enterprise Infrastructure Design</p>
                     </div>
@@ -192,78 +116,72 @@
             </div>
         </section>
 
-        <!-- FEATURED PROJECTS -->
         <section class="featured-projects">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Featured Homelab Projects</h2>
                     <p class="section-subtitle">Hands-on networking, security, and web development projects from my homelab environment</p>
                     <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="github-badge">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                            <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
-                        </svg>
+                        <i class="fab fa-github"></i>
                         Visit my GitHub
                     </a>
                 </div>
                 
                 <div class="projects-grid">
-                    <!-- Featured projects will be loaded dynamically from projects.json -->
                     <div class="loading-spinner" style="text-align: center; grid-column: 1/-1; padding: 2rem;">
                         <div style="width: 40px; height: 40px; border: 3px solid var(--border-color); border-top-color: var(--primary); border-radius: 50%; animation: spin 1s linear infinite; margin: 0 auto 1rem;"></div>
-                        <p style="color: var(--text-muted);">Loading featured projects...</p>
+                        <p style="color: var(--text-muted);"><i class="fas fa-spinner fa-pulse"></i> Loading featured projects...</p>
                     </div>
                 </div>
                 
                 <div class="section-footer">
-                    <a href="projects.html" class="btn btn-outline">View All Projects →</a>
+                    <a href="projects.html" class="btn btn-outline">View All Projects <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
         </section>
 
-        <!-- EDUCATION HIGHLIGHT -->
         <section class="education-highlight">
             <div class="container">
                 <div class="edu-card">
                     <div class="edu-badge">
                         <span class="grad-year">2026</span>
-                        <span class="grad-status">In Progress</span>
+                        <span class="grad-status"><i class="fas fa-hourglass-half fa-spin"></i> In Progress</span>
                     </div>
                     <div class="edu-content">
-                        <h3>Bachelor's Degree in Cybersecurity & Networking</h3>
+                        <h3><i class="fas fa-graduation-cap" style="color:#ffffff";></i> Bachelor's Degree in Cybersecurity & Networking</h3>
                         <p class="edu-institution">Auston College, Myanmar</p>
-                        <p class="edu-partner">In partnership with University of Wolverhampton, UK</p>
+                        <p class="edu-partner"><i class="fas fa-handshake" style="color:#ffffff";></i> In partnership with University of Wolverhampton, UK</p>
                         <p class="edu-desc">Advanced studies in cybersecurity, network defense, ethical hacking, and enterprise infrastructure design with practical lab work.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- MY APPROACH -->
         <section class="testimonials">
             <div class="container">
-                <h2 class="section-title">My Approach to Learning</h2>
+                <h2 class="section-title"><i class="fas fa-brain" style="color: var(--primary)";></i> My Approach to Learning</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
                         <p class="testimonial-text">
                             I believe in learning by doing. Every networking concept I study gets implemented 
                             in my homelab, documented thoroughly, and shared on GitHub. Real hands-on experience 
                             builds skills that certifications alone cannot.
                         </p>
                         <div class="testimonial-author">
-                            <strong>Hands-On Practice</strong>
+                            <strong><i class="fas fa-laptop-code"></i> Hands-On Practice</strong>
                             <span>Homelab | Documentation | GitHub</span>
                         </div>
                     </div>
                     <div class="testimonial-card">
-                        <div class="testimonial-quote">"</div>
+                        <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
                         <p class="testimonial-text">
                             Security isn't just a career path — it's a mindset. I approach every network 
                             configuration with defense in depth, considering not just how to make things work, 
                             but how to make them resilient against threats.
                         </p>
                         <div class="testimonial-author">
-                            <strong>Security-First Mindset</strong>
+                            <strong><i class="fas fa-shield-alt"></i> Security-First Mindset</strong>
                             <span>Defense in Depth | Best Practices</span>
                         </div>
                     </div>
@@ -272,60 +190,7 @@
         </section>
     </main>
     
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-info">
-                    <h3>Sai Aik Kwan</h3>
-                    <p>Networking & Cybersecurity Student<br>
-                    <a href="https://auston.edu.mm/" target="_blank" rel="noopener noreferrer">Auston College, Myanmar</a><br>
-                    Diploma: <a href="https://auston.edu.sg/" target="_blank" rel="noopener noreferrer">Auston Institute of Management, SG</a> | Bachelor's: <a href="https://www.wlv.ac.uk/" target="_blank" rel="noopener noreferrer">University of Wolverhampton, UK</a></p>
-                    <p class="footer-location">📍 Mandalay, Myanmar</p>
-                </div>
-                
-                <div class="footer-links">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="what-i-do.html">What I Do</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="https://github.com/saiaikkwan" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.26.82-.58 0-.287-.01-1.05-.015-2.06-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.73.083-.73 1.205.085 1.838 1.237 1.838 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.235-3.22-.123-.3-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23.96-.267 1.98-.4 3-.405 1.02.005 2.04.138 3 .405 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.24 2.876.118 3.176.768.84 1.233 1.91 1.233 3.22 0 4.61-2.804 5.62-5.476 5.92.43.37.824 1.102.824 2.222 0 1.604-.015 2.896-.015 3.287 0 .322.216.698.83.578C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/>
-                            </svg>
-                            GitHub
-                        </a>
-                        <a href="https://linkedin.com/in/sai-aik-kwan" target="_blank" rel="noopener noreferrer" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                            LinkedIn
-                        </a>
-                        <a href="mailto:saiaikkwan.pro@gmail.com" class="social-link">
-                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg>
-                            Email
-                        </a>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 Sai Aik Kwan. All rights reserved.</p>
-                <p class="footer-credit">Built with HTML/CSS/JS • Hosted on GitHub Pages</p>
-            </div>
-        </div>
-    </footer>
+    <div id="footer-placeholder"></div>
     
     <script src="assets/js/main.js"></script>
 </body>

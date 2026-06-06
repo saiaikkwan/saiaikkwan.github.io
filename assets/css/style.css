@@ -2,7 +2,6 @@
    ROOT VARIABLES - LIGHT MODE (DEFAULT)
    ============================================ */
 :root {
-    /* Colors - Light Mode */
     --bg-primary: #ffffff;
     --bg-secondary: #f8fafc;
     --bg-tertiary: #f1f5f9;
@@ -12,35 +11,24 @@
     --border-color: #e2e8f0;
     --card-bg: #ffffff;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-    
-    /* Accent Colors */
     --primary: #2563eb;
     --primary-dark: #1d4ed8;
     --primary-light: #60a5fa;
     --success: #10b981;
     --warning: #f59e0b;
     --danger: #ef4444;
-    
-    /* Typography */
     --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    
-    /* Spacing */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
     --spacing-2xl: 4rem;
-    
-    /* Container */
     --container-max: 1200px;
     --container-padding: 1.5rem;
-    
-    /* Transitions */
     --transition: all 0.3s ease;
 }
 
-/* Dark Mode Variables */
 [data-theme="dark"] {
     --bg-primary: #0f172a;
     --bg-secondary: #1e293b;
@@ -51,8 +39,6 @@
     --border-color: #334155;
     --card-bg: #1e293b;
     --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
-    
-    /* Accent adjustments for dark mode */
     --primary: #3b82f6;
     --primary-dark: #2563eb;
     --primary-light: #93c5fd;
@@ -163,7 +149,25 @@ a:hover {
     color: var(--text-secondary);
     font-weight: 500;
     padding: var(--spacing-xs) 0;
-    border-bottom: 2px solid transparent;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+/* Header underline animation - like footer */
+.nav-link::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    width: 100%;
 }
 
 .nav-link:hover,
@@ -178,7 +182,7 @@ a:hover {
     gap: var(--spacing-md);
 }
 
-/* Theme Toggle */
+/* Theme Toggle with Rotation */
 .theme-toggle {
     background: none;
     border: none;
@@ -192,9 +196,13 @@ a:hover {
     transition: var(--transition);
 }
 
-.theme-toggle:hover {
-    background-color: var(--bg-tertiary);
-    color: var(--primary);
+.theme-toggle i {
+    font-size: 1.2rem;
+    transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.theme-toggle:active i {
+    transform: rotate(360deg);
 }
 
 [data-theme="dark"] .sun-icon { display: block; }
@@ -202,7 +210,16 @@ a:hover {
 [data-theme="light"] .sun-icon { display: none; }
 [data-theme="light"] .moon-icon { display: block; }
 
-/* GitHub Link */
+.theme-toggle.rotating i {
+    animation: iconSpin 0.5s ease-in-out;
+}
+
+@keyframes iconSpin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* GitHub Link - SVG */
 .github-link {
     color: var(--text-secondary);
     display: flex;
@@ -212,6 +229,7 @@ a:hover {
 
 .github-link:hover {
     color: var(--text-primary);
+    transform: scale(1.05);
 }
 
 /* Mobile Menu */
@@ -237,6 +255,10 @@ a:hover {
     background-color: var(--bg-primary);
     border-top: 1px solid var(--border-color);
     padding: var(--spacing-md);
+}
+
+.mobile-menu.active {
+    display: block;
 }
 
 .mobile-nav-list {
@@ -275,6 +297,7 @@ a:hover {
 .btn-primary:hover {
     background-color: var(--primary-dark);
     color: white;
+    transform: translateY(-2px);
 }
 
 .btn-secondary {
@@ -284,6 +307,7 @@ a:hover {
 
 .btn-secondary:hover {
     background-color: var(--border-color);
+    transform: translateY(-2px);
 }
 
 .btn-outline {
@@ -295,6 +319,7 @@ a:hover {
 .btn-outline:hover {
     background-color: var(--primary);
     color: white;
+    transform: translateY(-2px);
 }
 
 .btn-sm {
@@ -407,6 +432,15 @@ a:hover {
     margin-bottom: 0;
 }
 
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+}
+
 .hero-location {
     display: flex;
     align-items: center;
@@ -458,6 +492,11 @@ a:hover {
 .stat-label {
     font-size: 0.875rem;
     color: var(--text-muted);
+}
+
+.stat-label i {
+    margin-right: 4px;
+    font-size: 0.7rem;
 }
 
 /* ============================================
@@ -518,6 +557,11 @@ a:hover {
 
 .section-title {
     margin-bottom: var(--spacing-xs);
+}
+
+.section-title i {
+    margin-right: 10px;
+    color: var(--primary);
 }
 
 .section-subtitle {
@@ -616,6 +660,21 @@ a:hover {
     color: var(--text-secondary);
 }
 
+.project-link {
+    display: inline-block;
+    margin-top: var(--spacing-sm);
+    color: var(--primary);
+    font-weight: 500;
+}
+
+.project-link i {
+    transition: transform 0.3s ease;
+}
+
+.project-link:hover i {
+    transform: translateX(4px);
+}
+
 .section-footer {
     text-align: center;
     margin-top: var(--spacing-xl);
@@ -664,6 +723,10 @@ a:hover {
     margin-bottom: var(--spacing-xs);
 }
 
+.edu-content h3 i {
+    margin-right: 8px;
+}
+
 .edu-institution {
     font-size: 1.1rem;
     opacity: 0.95;
@@ -680,7 +743,7 @@ a:hover {
 }
 
 /* ============================================
-   TESTIMONIALS
+   TESTIMONIALS / APPROACH
    ============================================ */
 .testimonials {
     padding: var(--spacing-2xl) 0;
@@ -701,14 +764,11 @@ a:hover {
     position: relative;
 }
 
-.testimonial-quote {
-    font-size: 4rem;
-    color: var(--primary);
+.testimonial-quote i {
+    font-size: 2rem;
     opacity: 0.3;
-    position: absolute;
-    top: 10px;
-    left: 20px;
-    font-family: serif;
+    color: var(--primary);
+    margin-bottom: var(--spacing-sm);
 }
 
 .testimonial-text {
@@ -727,6 +787,10 @@ a:hover {
 .testimonial-author strong {
     display: block;
     color: var(--text-primary);
+}
+
+.testimonial-author strong i {
+    margin-right: 6px;
 }
 
 .testimonial-author span {
@@ -749,6 +813,11 @@ a:hover {
     margin-bottom: var(--spacing-xs);
 }
 
+.page-title i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
 .page-subtitle {
     color: var(--text-muted);
     font-size: 1.1rem;
@@ -767,9 +836,19 @@ a:hover {
     gap: var(--spacing-2xl);
 }
 
+.bio-content h2 i {
+    margin-right: 10px;
+    color: var(--primary);
+}
+
 .bio-text {
     margin-bottom: var(--spacing-md);
     color: var(--text-secondary);
+}
+
+.bio-text i {
+    margin-right: 8px;
+    color: var(--primary);
 }
 
 .quick-facts {
@@ -786,8 +865,9 @@ a:hover {
     color: var(--text-secondary);
 }
 
-.fact-emoji {
-    font-size: 1.2rem;
+.fact-item i {
+    width: 24px;
+    color: var(--primary);
 }
 
 .bio-stats {
@@ -826,7 +906,7 @@ a:hover {
 .timeline::before {
     content: '';
     position: absolute;
-    left: 20px;
+    left: 24px;
     top: 0;
     bottom: 0;
     width: 2px;
@@ -835,19 +915,29 @@ a:hover {
 
 .timeline-item {
     position: relative;
-    padding-left: 60px;
+    padding-left: 70px;
     margin-bottom: var(--spacing-xl);
 }
 
 .timeline-marker {
     position: absolute;
-    left: 11px;
+    left: 12px;
     top: 5px;
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     background-color: var(--primary);
     border-radius: 50%;
-    border: 4px solid var(--bg-primary);
+    border: 3px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+/* Dark theme specific border for timeline marker */
+[data-theme="dark"] .timeline-marker {
+    border-color: #475569;
 }
 
 .timeline-content {
@@ -862,11 +952,23 @@ a:hover {
     justify-content: space-between;
     align-items: center;
     margin-bottom: var(--spacing-xs);
+    flex-wrap: wrap;
+    gap: var(--spacing-sm);
+}
+
+.timeline-header h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.timeline-header h3 i {
+    margin-right: 8px;
 }
 
 .timeline-year {
     color: var(--primary);
     font-weight: 600;
+    font-size: 0.9rem;
 }
 
 .timeline-institution {
@@ -879,14 +981,30 @@ a:hover {
     color: var(--text-muted);
 }
 
+.timeline-partner i {
+    margin-right: 4px;
+}
+
+.timeline-description {
+    margin-top: var(--spacing-sm);
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
 .timeline-status {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
     margin-top: var(--spacing-sm);
     padding: 4px 12px;
     border-radius: 20px;
     font-size: 0.75rem;
     font-weight: 500;
     text-transform: uppercase;
+}
+
+.timeline-status i {
+    font-size: 0.7rem;
 }
 
 .status-completed {
@@ -916,6 +1034,10 @@ a:hover {
     border-bottom: 2px solid var(--border-color);
 }
 
+.category-title i {
+    margin-right: 8px;
+}
+
 .category-title.in-progress {
     border-bottom-color: var(--warning);
 }
@@ -937,10 +1059,18 @@ a:hover {
     background-color: var(--card-bg);
     border-radius: 12px;
     box-shadow: var(--card-shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cert-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow);
 }
 
 .cert-icon {
     font-size: 2rem;
+    min-width: 50px;
+    text-align: center;
 }
 
 .cert-info h4 {
@@ -953,8 +1083,14 @@ a:hover {
     font-size: 0.875rem;
 }
 
+.cert-issuer i {
+    margin-right: 4px;
+}
+
 .cert-status {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     margin-top: 4px;
     padding: 2px 8px;
     background-color: var(--warning);
@@ -964,7 +1100,14 @@ a:hover {
     font-weight: 500;
 }
 
+.cert-status i {
+    font-size: 0.65rem;
+}
+
 .cert-year {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
     color: var(--success);
     font-size: 0.8rem;
     font-weight: 500;
@@ -987,6 +1130,10 @@ a:hover {
     margin-bottom: var(--spacing-md);
 }
 
+.skills-category h3 i {
+    margin-right: 8px;
+}
+
 .skills-cloud {
     display: flex;
     flex-wrap: wrap;
@@ -995,26 +1142,80 @@ a:hover {
 
 .skill-tag {
     padding: 8px 16px;
-    background-color: var(--primary);
-    color: white;
     border-radius: 20px;
     font-size: 0.9rem;
     font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    cursor: pointer;
 }
 
-.skill-tag.soft {
+.skill-tag i {
+    font-size: 0.85rem;
+}
+
+/* Technical Skills - Light gray background, dark text */
+.skill-tag.tech-skill {
     background-color: var(--bg-tertiary);
     color: var(--text-primary);
+}
+
+.skill-tag.tech-skill:hover {
+    transform: translateY(-3px);
+    background-color: var(--primary);
+    color: white;
+    box-shadow: var(--card-shadow);
+}
+
+.skill-tag.tech-skill:hover i {
+    color: white !important;
+}
+
+/* Soft Skills - Primary color background, white text */
+.skill-tag.soft-skill {
+    background-color: var(--primary);
+    color: white;
+}
+
+.skill-tag.soft-skill:hover {
+    transform: translateY(-3px);
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
+}
+
+.skill-tag.soft-skill:hover i {
+    color: var(--primary) !important;
+}
+
+/* Default skill-tag (fallback) */
+.skill-tag:not(.tech-skill):not(.soft-skill) {
+    background-color: var(--primary);
+    color: white;
+}
+
+.skill-tag:not(.tech-skill):not(.soft-skill):hover {
+    transform: translateY(-3px);
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    box-shadow: var(--card-shadow);
 }
 
 .tools-section {
     margin-top: var(--spacing-xl);
 }
 
+.tools-section h3 i {
+    margin-right: 8px;
+}
+
 .tools-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
 }
 
 .tool-item {
@@ -1025,12 +1226,18 @@ a:hover {
     background-color: var(--card-bg);
     border-radius: 8px;
     font-size: 0.9rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tool-icon {
+.tool-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--card-shadow);
+}
+
+.tool-item i {
     font-size: 1.2rem;
+    width: 24px;
 }
-
 /* ============================================
    PROJECTS PAGE STYLES
    ============================================ */
@@ -1040,6 +1247,12 @@ a:hover {
     gap: 8px;
     margin-top: var(--spacing-sm);
     color: var(--text-secondary);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.github-header-link:hover {
+    transform: translateX(5px);
+    color: var(--primary);
 }
 
 .projects-filter {
@@ -1059,18 +1272,52 @@ a:hover {
     padding: 8px 20px;
     background: none;
     border: 1px solid var(--border-color);
-    border-radius: 20px;
+    border-radius: 30px;
     color: var(--text-secondary);
     cursor: pointer;
-    transition: var(--transition);
     font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    position: relative;
+    overflow: hidden;
 }
 
-.filter-btn:hover,
+/* Apple Dock-style hover effect - scale up */
+.filter-btn:hover {
+    transform: scale(1.08) translateY(-2px);
+    background-color: var(--primary);
+    border-color: var(--primary);
+    color: white;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+/* Active button - larger and prominent */
 .filter-btn.active {
     background-color: var(--primary);
     border-color: var(--primary);
     color: white;
+    transform: scale(1.1);
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.4);
+    font-weight: 600;
+}
+
+/* Subtle ripple effect on click */
+.filter-btn:active {
+    transform: scale(0.98);
+    transition: transform 0.1s ease;
+}
+
+/* Optional: Add a subtle glow on active button */
+.filter-btn.active::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    background: radial-gradient(circle, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 70%);
+    pointer-events: none;
 }
 
 .all-projects {
@@ -1079,13 +1326,7 @@ a:hover {
 
 .projects-grid.full-grid {
     grid-template-columns: repeat(2, 1fr);
-}
-
-.project-link {
-    display: inline-block;
-    margin-top: var(--spacing-sm);
-    color: var(--primary);
-    font-weight: 500;
+    gap: var(--spacing-lg);
 }
 
 .more-projects-cta {
@@ -1094,6 +1335,12 @@ a:hover {
     padding: var(--spacing-xl);
     background-color: var(--card-bg);
     border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.more-projects-cta:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--card-shadow);
 }
 
 .more-projects-cta p {
@@ -1101,6 +1348,15 @@ a:hover {
     color: var(--text-secondary);
 }
 
+/* Project card hover effects */
+.project-card {
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.project-card:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
 /* ============================================
    CONTACT PAGE STYLES
    ============================================ */
@@ -1201,203 +1457,11 @@ a:hover {
     box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
 }
 
-/* Placeholder Styling */
 .form-group input::placeholder,
 .form-group textarea::placeholder {
     color: var(--text-muted);
     opacity: 0.6;
     font-size: 0.9rem;
-}
-
-.form-group input:focus::placeholder,
-.form-group textarea:focus::placeholder {
-    opacity: 0.4;
-}
-
-.form-success {
-    text-align: center;
-    padding: var(--spacing-xl);
-}
-
-.form-success svg {
-    color: var(--success);
-    margin-bottom: var(--spacing-md);
-}
-
-.form-error {
-    padding: var(--spacing-sm);
-    background-color: rgba(239, 68, 68, 0.1);
-    border: 1px solid var(--danger);
-    border-radius: 8px;
-    color: var(--danger);
-    margin-bottom: var(--spacing-md);
-}
-
-/* ============================================
-   SOCIAL LINKS (Brand Colors on Hover)
-   ============================================ */
-.social-links-large-vertical {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: var(--spacing-md);
-}
-
-.social-link-large {
-    display: grid;
-    grid-template-columns: 32px 1fr;
-    align-items: center;
-    gap: 12px;
-    padding: 14px 18px;
-    background-color: var(--card-bg);
-    border-radius: 12px;
-    color: var(--text-primary);
-    text-decoration: none;
-    transition: var(--transition);
-    box-shadow: var(--card-shadow);
-    border: 1px solid var(--border-color);
-    font-weight: 500;
-    cursor: pointer;
-}
-
-.social-link-large:hover {
-    transform: translateX(5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
-}
-
-.social-link-large .social-icon-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 32px;
-    height: 32px;
-}
-
-.social-link-large svg {
-    width: 24px;
-    height: 24px;
-    display: block;
-    transition: var(--transition);
-}
-
-.social-link-large .social-name {
-    font-weight: 500;
-    color: var(--text-primary);
-    transition: var(--transition);
-}
-
-/* GitHub - Black */
-.social-link-large[href*="github"]:hover {
-    border-color: #333333;
-    background-color: rgba(51, 51, 51, 0.06);
-}
-.social-link-large[href*="github"]:hover svg {
-    fill: #333333;
-}
-.social-link-large[href*="github"]:hover .social-name {
-    color: #333333;
-}
-
-/* LinkedIn - Blue */
-.social-link-large.linkedin:hover,
-.social-link-large[href*="linkedin"]:hover {
-    border-color: #0A66C2;
-    background-color: rgba(10, 102, 194, 0.06);
-}
-.social-link-large.linkedin:hover svg,
-.social-link-large[href*="linkedin"]:hover svg {
-    fill: #0A66C2;
-}
-.social-link-large.linkedin:hover .social-name,
-.social-link-large[href*="linkedin"]:hover .social-name {
-    color: #0A66C2;
-}
-
-/* Instagram - Pink */
-.social-link-large.instagram:hover,
-.social-link-large[href*="instagram"]:hover {
-    border-color: #E1306C;
-    background: linear-gradient(45deg, rgba(244, 148, 51, 0.06), rgba(188, 24, 136, 0.06));
-}
-.social-link-large.instagram:hover svg,
-.social-link-large[href*="instagram"]:hover svg {
-    fill: #E1306C;
-}
-.social-link-large.instagram:hover .social-name,
-.social-link-large[href*="instagram"]:hover .social-name {
-    color: #E1306C;
-}
-
-/* Telegram - Light Blue */
-.social-link-large.telegram:hover,
-.social-link-large[href*="telegram"]:hover,
-.social-link-large[href*="t.me"]:hover {
-    border-color: #26A5E4;
-    background-color: rgba(38, 165, 228, 0.06);
-}
-.social-link-large.telegram:hover svg,
-.social-link-large[href*="telegram"]:hover svg,
-.social-link-large[href*="t.me"]:hover svg {
-    fill: #26A5E4;
-}
-.social-link-large.telegram:hover .social-name,
-.social-link-large[href*="telegram"]:hover .social-name,
-.social-link-large[href*="t.me"]:hover .social-name {
-    color: #26A5E4;
-}
-
-/* Facebook - Blue */
-.social-link-large.facebook:hover,
-.social-link-large[href*="facebook"]:hover {
-    border-color: #1877F2;
-    background-color: rgba(24, 119, 242, 0.06);
-}
-.social-link-large.facebook:hover svg,
-.social-link-large[href*="facebook"]:hover svg {
-    fill: #1877F2;
-}
-.social-link-large.facebook:hover .social-name,
-.social-link-large[href*="facebook"]:hover .social-name {
-    color: #1877F2;
-}
-
-/* Discord - Purple */
-.social-link-large.discord:hover,
-.social-link-large[href*="discord"]:hover {
-    border-color: #5865F2;
-    background-color: rgba(88, 101, 242, 0.06);
-}
-.social-link-large.discord:hover svg,
-.social-link-large[href*="discord"]:hover svg {
-    fill: #5865F2;
-}
-.social-link-large.discord:hover .social-name,
-.social-link-large[href*="discord"]:hover .social-name {
-    color: #5865F2;
-}
-
-/* Discord Server Badge */
-.social-link-large.discord .server-badge {
-    font-size: 0.7rem;
-    background-color: #5865F2;
-    color: white;
-    padding: 2px 8px;
-    border-radius: 20px;
-    margin-left: auto;
-    font-weight: 500;
-}
-
-.social-link-large.discord:hover .server-badge {
-    background-color: white;
-    color: #5865F2;
-}
-
-/* Dark Mode Adjustments */
-[data-theme="dark"] .social-link-large[href*="github"]:hover svg {
-    fill: #ffffff;
-}
-[data-theme="dark"] .social-link-large[href*="github"]:hover .social-name {
-    color: #ffffff;
 }
 
 /* ============================================
@@ -1426,8 +1490,13 @@ a:hover {
     color: var(--text-muted);
 }
 
+/* Hourglass rotating animation */
+.fa-hourglass-half {
+    animation: spin 2s linear infinite;
+}
+
 /* ============================================
-   FOOTER
+   FOOTER - NO UNDERLINE ANIMATION
    ============================================ */
 .footer {
     background-color: var(--bg-secondary);
@@ -1453,6 +1522,11 @@ a:hover {
     margin-bottom: var(--spacing-xs);
 }
 
+.footer-info i {
+    margin-right: 6px;
+    width: 20px;
+}
+
 .footer-location {
     margin-top: var(--spacing-sm);
 }
@@ -1463,6 +1537,11 @@ a:hover {
     color: var(--text-primary);
 }
 
+.footer-links h4 i,
+.footer-social h4 i {
+    margin-right: 8px;
+}
+
 .footer-links ul {
     list-style: none;
 }
@@ -1471,35 +1550,38 @@ a:hover {
     margin-bottom: var(--spacing-xs);
 }
 
-.footer-links a {
+/* Footer links - NO underline animation */
+.footer-links ul li a,
+.footer-social .social-link {
+    display: inline-block;
     color: var(--text-secondary);
-    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    padding: 4px 0;
 }
 
-.footer-links a:hover {
+/* Hover effect - shift only, NO underline */
+.footer-links ul li a:hover,
+.footer-social .social-link:hover {
+    transform: translateX(5px);
     color: var(--primary);
+}
+
+/* Icon styling inside footer links */
+.footer-links ul li a i,
+.footer-social .social-link i {
+    margin-right: 6px;
+    font-size: 0.95rem;
+    transition: transform 0.3s ease;
+}
+
+.footer-social .social-link:hover i {
+    transform: scale(1.1);
 }
 
 .social-links {
     display: flex;
     flex-direction: column;
     gap: var(--spacing-sm);
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    color: var(--text-secondary);
-}
-
-.social-link:hover {
-    color: var(--primary);
-}
-
-.social-emoji {
-    font-size: 1.2rem;
-    margin-right: 4px;
 }
 
 .footer-bottom {
@@ -1511,6 +1593,13 @@ a:hover {
     font-size: 0.875rem;
 }
 
+.footer-bottom i {
+    margin-right: 4px;
+}
+
+.footer-credit i {
+    margin-right: 4px;
+}
 /* ============================================
    SERVICES GRID (What I Do Page)
    ============================================ */
@@ -1552,7 +1641,11 @@ a:hover {
 
     .services-grid {
         grid-template-columns: repeat(2, 1fr);
-    }    
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 768px) {
@@ -1562,10 +1655,6 @@ a:hover {
     
     .mobile-menu-btn {
         display: flex;
-    }
-    
-    .mobile-menu.active {
-        display: block;
     }
     
     .hero-title {
@@ -1597,10 +1686,6 @@ a:hover {
         grid-template-columns: 1fr;
     }
     
-    .tools-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-    
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
@@ -1615,16 +1700,14 @@ a:hover {
         text-align: center;
         gap: var(--spacing-sm);
     }
-    
-    .social-link-large {
-        grid-template-columns: 28px 1fr;
-        padding: 12px 16px;
-        gap: 10px;
-    }
 
     .services-grid {
         grid-template-columns: 1fr;
-    }    
+    }
+    
+    .tools-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 @media (max-width: 480px) {
@@ -1645,4 +1728,242 @@ a:hover {
     .tools-grid {
         grid-template-columns: 1fr;
     }
+    
+    .quick-facts {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ============================================
+   BRAND COLOR ICONS
+   ============================================ */
+
+/* Tech Stack Colors */
+.fa-html5 { color: #E34F26; }
+.fa-css3-alt { color: #1572B6; }
+.fa-js { color: #F7DF1E; }
+.fa-php { color: #777BB4; }
+.fa-python { color: #3776AB; }
+.fa-react { color: #61DAFB; }
+.fa-node { color: #339933; }
+
+/* Social Media Colors */
+.fa-github { color: var(--text-primary); }
+.fa-linkedin { color: #0A66C2; }
+.fa-instagram { color: #E1306C; }
+.fa-telegram { color: #26A5E4; }
+.fa-facebook { color: #1877F2; }
+
+/* Primary Theme Icons - Using your existing primary color */
+.fa-smile-wink,
+.fa-university,
+.fa-laptop-code,
+.fa-code-branch,
+.fa-certificate,
+.fa-envelope,
+.fa-comments,
+.fa-paper-plane,
+.fa-arrow-left,
+.fa-cogs,
+.fa-user,
+.fa-home,
+.fa-link,
+.fa-share-alt {
+    color: var(--primary);
+}
+
+/* Location Icons - Muted Professional Red */
+.fa-map-marker-alt,
+.fa-location-dot {
+    color: #DC2626;  /* Red 600 - not too bright, professional */
+}
+
+/* Security Shield Icons - Darker Red for Security */
+.fa-shield-alt {
+    color: #B91C1C;  /* Red 700 - darker, more serious for security */
+}
+
+/* Or use your existing danger variable */
+.contact-card .fa-map-marker-alt {
+    color: var(--danger);  /* Uses your existing #ef4444 */
+}
+
+/* Success/Completion Colors */
+.fa-check-circle {
+    color: var(--success);
+}
+
+.fa-hourglass-half {
+    color: var(--warning);
+}
+
+/* Tool Icons */
+.fa-chart-bar,        /* Wireshark */
+.fa-eye,         /* Nmap */
+.fa-terminal,
+.fa-desktop,
+.fa-route,
+.fa-users,
+.fa-chart-line,
+.fa-chart-bar,
+.fa-clock,
+.fa-file-alt,
+.fa-puzzle-piece,
+.fa-comments,
+.fa-brain {
+    color: var(--text-secondary);
+}
+
+/* Tool Icons on Hover */
+.tool-item:hover .fa-windows,
+.tool-item:hover .fa-linux,
+.tool-item:hover .fa-chart-bar,
+.tool-item:hover .fa-users,
+.tool-item:hover .fa-eye,
+.tool-item:hover .fa-terminal,
+.tool-item:hover .fa-desktop,
+.tool-item:hover .fa-network-wired {
+    color: var(--primary);
+}
+
+/* Social link hover brand colors */
+.social-link:hover .fa-github { color: #ffffff; }
+.social-link:hover .fa-linkedin { color: #0A66C2; }
+.social-link:hover .fa-envelope { color: #EA4335; }
+
+/* Contact page social link icons */
+.social-link-large .fa-github,
+.social-link-large .fa-linkedin,
+.social-link-large .fa-instagram,
+.social-link-large .fa-telegram,
+.social-link-large .fa-facebook {
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.social-link-large:hover .fa-github { color: #333333; }
+.social-link-large.linkedin:hover .fa-linkedin { color: #0A66C2; }
+.social-link-large.instagram:hover .fa-instagram { color: #E1306C; }
+.social-link-large.telegram:hover .fa-telegram { color: #26A5E4; }
+.social-link-large.facebook:hover .fa-fa-facebook { color: #1877F2; }
+
+/* ============================================
+   SOCIAL LINKS STYLES (Contact Page)
+   ============================================ */
+.social-links-large-vertical {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: var(--spacing-md);
+}
+
+.social-link-large {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px 20px;
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    color: var(--text-primary);
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: var(--card-shadow);
+    border: 1px solid var(--border-color);
+    font-weight: 500;
+}
+
+.social-link-large .social-icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background-color: var(--bg-tertiary);
+    transition: all 0.3s ease;
+}
+
+.social-link-large .social-icon-wrapper i {
+    font-size: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.social-link-large .social-name {
+    font-weight: 500;
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+/* Hover Effects */
+.social-link-large:hover {
+    transform: translateX(8px);
+    border-color: var(--primary);
+}
+
+.social-link-large:hover .social-icon-wrapper {
+    transform: scale(1.05);
+}
+
+/* Individual Brand Colors on Hover */
+.social-link-large:hover .social-name {
+    color: var(--primary);
+}
+
+/* GitHub */
+.social-link-large[href*="github"]:hover .social-icon-wrapper {
+    background-color: #333333;
+}
+.social-link-large[href*="github"]:hover .social-icon-wrapper i {
+    color: white;
+}
+
+/* LinkedIn */
+.social-link-large.linkedin:hover .social-icon-wrapper,
+.social-link-large[href*="linkedin"]:hover .social-icon-wrapper {
+    background-color: #0A66C2;
+}
+.social-link-large.linkedin:hover .social-icon-wrapper i,
+.social-link-large[href*="linkedin"]:hover .social-icon-wrapper i {
+    color: white;
+}
+
+/* Instagram */
+.social-link-large.instagram:hover .social-icon-wrapper,
+.social-link-large[href*="instagram"]:hover .social-icon-wrapper {
+    background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+}
+.social-link-large.instagram:hover .social-icon-wrapper i,
+.social-link-large[href*="instagram"]:hover .social-icon-wrapper i {
+    color: white;
+}
+
+/* Telegram */
+.social-link-large.telegram:hover .social-icon-wrapper,
+.social-link-large[href*="telegram"]:hover .social-icon-wrapper,
+.social-link-large[href*="t.me"]:hover .social-icon-wrapper {
+    background-color: #26A5E4;
+}
+.social-link-large.telegram:hover .social-icon-wrapper i,
+.social-link-large[href*="telegram"]:hover .social-icon-wrapper i,
+.social-link-large[href*="t.me"]:hover .social-icon-wrapper i {
+    color: white;
+}
+
+/* Facebook */
+.social-link-large.facebook:hover .social-icon-wrapper,
+.social-link-large[href*="facebook"]:hover .social-icon-wrapper {
+    background-color: #1877F2;
+}
+.social-link-large.facebook:hover .social-icon-wrapper i,
+.social-link-large[href*="facebook"]:hover .social-icon-wrapper i {
+    color: white;
+}
+
+/* Dark Mode Adjustments */
+[data-theme="dark"] .social-link-large .social-icon-wrapper {
+    background-color: var(--bg-tertiary);
+}
+
+[data-theme="dark"] .social-link-large:hover .social-name {
+    color: var(--primary-light);
 }

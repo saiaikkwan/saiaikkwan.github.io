@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 150" width="40" height="30">
+    <rect width="200" height="150" fill="#C82025" rx="10"/>
+    <text x="100" y="85" font-family="Arial, sans-serif" font-size="24" font-weight="bold" fill="white" text-anchor="middle">CompTIA</text>
+    <text x="100" y="115" font-family="Arial, sans-serif" font-size="11" fill="white" text-anchor="middle">Security+</text>
+</svg>
