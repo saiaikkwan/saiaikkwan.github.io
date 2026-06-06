@@ -1756,7 +1756,6 @@ a:hover {
 
 /* Primary Theme Icons - Using your existing primary color */
 .fa-smile-wink,
-.fa-university,
 .fa-laptop-code,
 .fa-code-branch,
 .fa-certificate,
@@ -1768,7 +1767,9 @@ a:hover {
 .fa-user,
 .fa-home,
 .fa-link,
-.fa-share-alt {
+.fa-share-alt,
+.fa-tag,
+.fa-comment-dots {
     color: var(--primary);
 }
 
