@@ -153,7 +153,7 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-/* Header underline animation - like footer */
+/* Header underline animation */
 .nav-link::after {
     content: '';
     position: absolute;
@@ -173,7 +173,6 @@ a:hover {
 .nav-link:hover,
 .nav-link.active {
     color: var(--primary);
-    border-bottom-color: var(--primary);
 }
 
 .header-actions {
@@ -330,6 +329,88 @@ a:hover {
 .btn-block {
     width: 100%;
     justify-content: center;
+}
+
+/* ============================================
+   PROJECT BUTTONS (GitHub + Live Demo)
+   ============================================ */
+.project-buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    text-decoration: none;
+}
+
+.github-link-btn {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border: 1px solid var(--border-color);
+}
+
+.github-link-btn:hover {
+    background-color: #333333;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.live-link-btn {
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.live-link-btn:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
+}
+
+/* Overlay buttons */
+.overlay-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.btn-live {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-live:hover {
+    background-color: var(--primary-dark);
+    transform: scale(1.05);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .github-link-btn {
+    background-color: var(--bg-tertiary);
+    border-color: var(--border-color);
+}
+
+[data-theme="dark"] .github-link-btn:hover {
+    background-color: #444444;
+}
+
+[data-theme="dark"] .live-link-btn {
+    background-color: var(--primary);
+}
+
+[data-theme="dark"] .live-link-btn:hover {
+    background-color: var(--primary-dark);
 }
 
 /* ============================================
@@ -592,12 +673,12 @@ a:hover {
     border-radius: 12px;
     overflow: hidden;
     box-shadow: var(--card-shadow);
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
 .project-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .project-image {
@@ -658,21 +739,6 @@ a:hover {
     border-radius: 20px;
     font-size: 0.75rem;
     color: var(--text-secondary);
-}
-
-.project-link {
-    display: inline-block;
-    margin-top: var(--spacing-sm);
-    color: var(--primary);
-    font-weight: 500;
-}
-
-.project-link i {
-    transition: transform 0.3s ease;
-}
-
-.project-link:hover i {
-    transform: translateX(4px);
 }
 
 .section-footer {
@@ -1073,6 +1139,15 @@ a:hover {
     text-align: center;
 }
 
+.cert-icon img {
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+[data-theme="dark"] .cert-icon img {
+    filter: brightness(0.9);
+}
+
 .cert-info h4 {
     font-size: 1rem;
     margin-bottom: 4px;
@@ -1238,6 +1313,7 @@ a:hover {
     font-size: 1.2rem;
     width: 24px;
 }
+
 /* ============================================
    PROJECTS PAGE STYLES
    ============================================ */
@@ -1348,15 +1424,6 @@ a:hover {
     color: var(--text-secondary);
 }
 
-/* Project card hover effects */
-.project-card {
-    transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.project-card:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
 /* ============================================
    CONTACT PAGE STYLES
    ============================================ */
@@ -1600,6 +1667,7 @@ a:hover {
 .footer-credit i {
     margin-right: 4px;
 }
+
 /* ============================================
    SERVICES GRID (What I Do Page)
    ============================================ */
@@ -1754,7 +1822,7 @@ a:hover {
 .fa-telegram { color: #26A5E4; }
 .fa-facebook { color: #1877F2; }
 
-/* Primary Theme Icons - Using your existing primary color */
+/* Primary Theme Icons */
 .fa-smile-wink,
 .fa-laptop-code,
 .fa-code-branch,
@@ -1769,24 +1837,26 @@ a:hover {
 .fa-link,
 .fa-share-alt,
 .fa-tag,
-.fa-comment-dots {
+.fa-comment-dots,
+.fa-crown {
     color: var(--primary);
 }
 
 /* Location Icons - Muted Professional Red */
 .fa-map-marker-alt,
 .fa-location-dot {
-    color: #DC2626;  /* Red 600 - not too bright, professional */
+    color: #DC2626;
 }
 
 /* Security Shield Icons - Darker Red for Security */
-.fa-shield-alt {
-    color: #B91C1C;  /* Red 700 - darker, more serious for security */
+.fa-shield-alt,
+.fa-shield-haltered {
+    color: #B91C1C;
 }
 
-/* Or use your existing danger variable */
+/* Contact card location uses danger variable */
 .contact-card .fa-map-marker-alt {
-    color: var(--danger);  /* Uses your existing #ef4444 */
+    color: var(--danger);
 }
 
 /* Success/Completion Colors */
@@ -1799,19 +1869,19 @@ a:hover {
 }
 
 /* Tool Icons */
-.fa-chart-bar,        /* Wireshark */
-.fa-eye,         /* Nmap */
+.fa-chart-bar,
+.fa-eye,
 .fa-terminal,
 .fa-desktop,
 .fa-route,
 .fa-users,
 .fa-chart-line,
-.fa-chart-bar,
 .fa-clock,
 .fa-file-alt,
 .fa-puzzle-piece,
 .fa-comments,
-.fa-brain {
+.fa-brain,
+.fa-network-wired {
     color: var(--text-secondary);
 }
 
@@ -1831,22 +1901,6 @@ a:hover {
 .social-link:hover .fa-github { color: #ffffff; }
 .social-link:hover .fa-linkedin { color: #0A66C2; }
 .social-link:hover .fa-envelope { color: #EA4335; }
-
-/* Contact page social link icons */
-.social-link-large .fa-github,
-.social-link-large .fa-linkedin,
-.social-link-large .fa-instagram,
-.social-link-large .fa-telegram,
-.social-link-large .fa-facebook {
-    color: var(--text-primary);
-    transition: color 0.3s ease;
-}
-
-.social-link-large:hover .fa-github { color: #333333; }
-.social-link-large.linkedin:hover .fa-linkedin { color: #0A66C2; }
-.social-link-large.instagram:hover .fa-instagram { color: #E1306C; }
-.social-link-large.telegram:hover .fa-telegram { color: #26A5E4; }
-.social-link-large.facebook:hover .fa-fa-facebook { color: #1877F2; }
 
 /* ============================================
    SOCIAL LINKS STYLES (Contact Page)
@@ -1895,7 +1949,6 @@ a:hover {
     transition: color 0.3s ease;
 }
 
-/* Hover Effects */
 .social-link-large:hover {
     transform: translateX(8px);
     border-color: var(--primary);
@@ -1905,12 +1958,11 @@ a:hover {
     transform: scale(1.05);
 }
 
-/* Individual Brand Colors on Hover */
 .social-link-large:hover .social-name {
     color: var(--primary);
 }
 
-/* GitHub */
+/* Individual Brand Colors on Hover */
 .social-link-large[href*="github"]:hover .social-icon-wrapper {
     background-color: #333333;
 }
@@ -1918,7 +1970,6 @@ a:hover {
     color: white;
 }
 
-/* LinkedIn */
 .social-link-large.linkedin:hover .social-icon-wrapper,
 .social-link-large[href*="linkedin"]:hover .social-icon-wrapper {
     background-color: #0A66C2;
@@ -1928,7 +1979,6 @@ a:hover {
     color: white;
 }
 
-/* Instagram */
 .social-link-large.instagram:hover .social-icon-wrapper,
 .social-link-large[href*="instagram"]:hover .social-icon-wrapper {
     background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
@@ -1938,7 +1988,6 @@ a:hover {
     color: white;
 }
 
-/* Telegram */
 .social-link-large.telegram:hover .social-icon-wrapper,
 .social-link-large[href*="telegram"]:hover .social-icon-wrapper,
 .social-link-large[href*="t.me"]:hover .social-icon-wrapper {
@@ -1950,7 +1999,6 @@ a:hover {
     color: white;
 }
 
-/* Facebook */
 .social-link-large.facebook:hover .social-icon-wrapper,
 .social-link-large[href*="facebook"]:hover .social-icon-wrapper {
     background-color: #1877F2;
@@ -1968,3 +2016,19 @@ a:hover {
 [data-theme="dark"] .social-link-large:hover .social-name {
     color: var(--primary-light);
 }
+
+/* Contact page social link icons color fix */
+.social-link-large .fa-github,
+.social-link-large .fa-linkedin,
+.social-link-large .fa-instagram,
+.social-link-large .fa-telegram,
+.social-link-large .fa-facebook {
+    color: var(--text-primary);
+    transition: color 0.3s ease;
+}
+
+.social-link-large:hover .fa-github { color: #333333; }
+.social-link-large.linkedin:hover .fa-linkedin { color: #0A66C2; }
+.social-link-large.instagram:hover .fa-instagram { color: #E1306C; }
+.social-link-large.telegram:hover .fa-telegram { color: #26A5E4; }
+.social-link-large.facebook:hover .fa-facebook { color: #1877F2; }

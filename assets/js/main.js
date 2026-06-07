@@ -108,41 +108,164 @@ function updateActiveNavLink() {
 }
 
 // ============================================
-// LOAD PROJECTS FROM JSON
+// CREATE PROJECT CARD (Helper Function)
 // ============================================
-(async function() {
-    const projectsGrid = document.querySelector('.projects-grid');
-    if (!projectsGrid) return;
+function createProjectCard(project) {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    card.setAttribute('data-category', project.category);
+    card.setAttribute('data-id', project.id);
+    
+    const techTags = project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('');
+    
+    const buttonsHtml = project.liveUrl ? `
+        <div class="project-buttons">
+            <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link github-link-btn">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+            <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link live-link-btn">
+                <i class="fas fa-external-link-alt"></i> View Live
+            </a>
+        </div>
+    ` : `
+        <div class="project-buttons">
+            <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link github-link-btn">
+                <i class="fab fa-github"></i> View on GitHub
+            </a>
+        </div>
+    `;
+    
+    card.innerHTML = `
+        <div class="project-image">
+            <img src="${project.image}" alt="${project.title}" 
+                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1rem;padding:1rem;text-align:center;>${project.title}</div>';">
+            <div class="project-overlay">
+                <div class="overlay-buttons">
+                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-live">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>` : ''}
+                </div>
+            </div>
+        </div>
+        <div class="project-content">
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-description">${project.description}</p>
+            <div class="project-tech">${techTags}</div>
+            ${buttonsHtml}
+        </div>
+    `;
+    
+    return card;
+}
+
+// ============================================
+// CREATE HOMEPAGE PROJECT CARD
+// ============================================
+function createHomepageProjectCard(project) {
+    const card = document.createElement('div');
+    card.className = 'project-card';
+    
+    const techTags = project.tech.slice(0, 5).map(tech => `<span class="tech-tag">${tech}</span>`).join('');
+    
+    card.innerHTML = `
+        <div class="project-image">
+            <img src="${project.image}" alt="${project.title}" 
+                 onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1rem;padding:1rem;text-align:center;>${project.title}</div>';">
+            <div class="project-overlay">
+                <div class="overlay-buttons">
+                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-live">
+                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    </a>` : ''}
+                </div>
+            </div>
+        </div>
+        <div class="project-content">
+            <h3 class="project-title">${project.title}</h3>
+            <p class="project-description">${project.description}</p>
+            <div class="project-tech">${techTags}</div>
+            <div class="project-buttons">
+                <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link github-link-btn">
+                    <i class="fab fa-github"></i> View on GitHub
+                </a>
+                ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link live-link-btn">
+                    <i class="fas fa-external-link-alt"></i> View Live
+                </a>` : ''}
+            </div>
+        </div>
+    `;
+    
+    return card;
+}
+
+// ============================================
+// LOAD FEATURED PROJECTS FROM JSON (Homepage)
+// ============================================
+(async function loadFeaturedProjects() {
+    const featuredGrid = document.querySelector('.featured-projects .projects-grid');
+    
+    if (featuredGrid) {
+        try {
+            const response = await fetch('assets/data/projects.json');
+            const data = await response.json();
+            const featuredProjects = data.projects.filter(p => p.featured === true);
+            
+            featuredGrid.innerHTML = '';
+            
+            featuredProjects.slice(0, 3).forEach(project => {
+                const projectCard = createHomepageProjectCard(project);
+                featuredGrid.appendChild(projectCard);
+            });
+            
+        } catch (error) {
+            console.error('Failed to load featured projects:', error);
+            featuredGrid.innerHTML = '<div class="error-message" style="text-align: center; grid-column: 1/-1; padding: 2rem; color: var(--danger);"><i class="fas fa-exclamation-triangle"></i> Failed to load projects. Please refresh the page.</div>';
+        }
+    }
+})();
+
+// ============================================
+// LOAD PROJECTS FROM JSON (Projects Page)
+// ============================================
+(async function initProjectFilter() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const projectsGridFull = document.querySelector('.projects-grid.full-grid');
+    
+    if (!filterButtons.length || !projectsGridFull) return;
     
     try {
         const response = await fetch('assets/data/projects.json');
         const data = await response.json();
-        const featuredProjects = data.projects.filter(p => p.featured === true);
+        const allProjects = data.projects;
+        const keywords = data.filterKeywords;
         
-        projectsGrid.innerHTML = '';
+        function renderProjects(filter = 'all') {
+            projectsGridFull.innerHTML = '';
+            const filtered = filter === 'all' ? allProjects : allProjects.filter(p => p.category === filter);
+            
+            filtered.forEach(project => {
+                const projectCard = createProjectCard(project);
+                projectsGridFull.appendChild(projectCard);
+            });
+        }
         
-        featuredProjects.slice(0, 3).forEach(project => {
-            const techTags = project.tech.slice(0, 5).map(tech => `<span class="tech-tag">${tech}</span>`).join('');
-            const card = document.createElement('div');
-            card.className = 'project-card';
-            card.innerHTML = `
-                <div class="project-image">
-                    <img src="${project.image}" alt="${project.title}" 
-                         onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1rem;padding:1rem;text-align:center;>${project.title}</div>';">
-                    <div class="project-overlay">
-                        <a href="${project.github}" target="_blank" class="btn btn-sm">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">${project.title}</h3>
-                    <p class="project-description">${project.description}</p>
-                    <div class="project-tech">${techTags}</div>
-                </div>
-            `;
-            projectsGrid.appendChild(card);
+        renderProjects('all');
+        
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                renderProjects(button.getAttribute('data-filter'));
+            });
         });
     } catch (error) {
-        console.error('Failed to load projects:', error);
+        console.error('Failed to load projects for filter:', error);
+        projectsGridFull.innerHTML = '<div class="error-message" style="text-align: center; grid-column: 1/-1; padding: 3rem; color: var(--danger);"><i class="fas fa-exclamation-triangle"></i> Failed to load projects. Please refresh the page.</div>';
     }
 })();
 
@@ -211,55 +334,50 @@ function updateActiveNavLink() {
 })();
 
 // ============================================
-// PROJECT FILTER (Projects Page)
+// FORM VALIDATION
 // ============================================
-(async function initProjectFilter() {
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const projectsGridFull = document.querySelector('.projects-grid.full-grid');
+(function() {
+    const contactForm = document.querySelector('.contact-form');
     
-    if (!filterButtons.length || !projectsGridFull) return;
-    
-    try {
-        const response = await fetch('assets/data/projects.json');
-        const data = await response.json();
-        const allProjects = data.projects;
-        
-        function renderProjects(filter = 'all') {
-            projectsGridFull.innerHTML = '';
-            const filtered = filter === 'all' ? allProjects : allProjects.filter(p => p.category === filter);
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            const name = document.getElementById('name');
+            const email = document.getElementById('email');
+            const message = document.getElementById('message');
             
-            filtered.forEach(project => {
-                const techTags = project.tech.map(tech => `<span class="tech-tag">${tech}</span>`).join('');
-                const card = document.createElement('div');
-                card.className = 'project-card';
-                card.setAttribute('data-category', project.category);
-                card.innerHTML = `
-                    <div class="project-image">
-                        <img src="${project.image}" alt="${project.title}" 
-                             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1rem;padding:1rem;text-align:center;>${project.title}</div>';">
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">${project.title}</h3>
-                        <p class="project-description">${project.description}</p>
-                        <div class="project-tech">${techTags}</div>
-                        <a href="${project.github}" target="_blank" class="project-link">View on GitHub <i class="fas fa-arrow-right"></i></a>
-                    </div>
-                `;
-                projectsGridFull.appendChild(card);
-            });
-        }
-        
-        renderProjects('all');
-        
-        filterButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                filterButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
-                renderProjects(button.getAttribute('data-filter'));
-            });
+            let isValid = true;
+            
+            if (name && !name.value.trim()) {
+                name.style.borderColor = 'var(--danger)';
+                isValid = false;
+            } else if (name) {
+                name.style.borderColor = 'var(--border-color)';
+            }
+            
+            if (email && !email.value.trim()) {
+                email.style.borderColor = 'var(--danger)';
+                isValid = false;
+            } else if (email) {
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(email.value)) {
+                    email.style.borderColor = 'var(--danger)';
+                    isValid = false;
+                } else {
+                    email.style.borderColor = 'var(--border-color)';
+                }
+            }
+            
+            if (message && !message.value.trim()) {
+                message.style.borderColor = 'var(--danger)';
+                isValid = false;
+            } else if (message) {
+                message.style.borderColor = 'var(--border-color)';
+            }
+            
+            if (!isValid) {
+                e.preventDefault();
+            }
         });
-    } catch (error) {
-        console.error('Failed to load projects for filter:', error);
     }
 })();
 

@@ -5,6 +5,7 @@
             "title": "Lab Login Portal - Frontend",
             "description": "A clean, responsive login interface for a homelab management portal. Features form validation, dark/light mode toggle, and accessibility-first design principles.",
             "github": "https://github.com/saiaikkwan/lab-login-frontend",
+            "liveUrl": "https://saiaikkwan.github.io/lab-login-frontend",
             "image": "assets/images/project01.png",
             "category": "webdev",
             "tech": ["HTML5", "CSS3", "JavaScript", "Form Validation", "Responsive Design"],
@@ -16,6 +17,7 @@
             "title": "Personal Portfolio Website",
             "description": "A responsive portfolio site with theme toggle, project showcase, contact form, and smooth scroll animations. Built from scratch with modern CSS techniques.",
             "github": "https://github.com/saiaikkwan/portfolio",
+            "liveUrl": "https://saiaikkwan.github.io",
             "image": "assets/images/project02.png",
             "category": "webdev",
             "tech": ["HTML5", "CSS3", "JavaScript", "Flexbox", "CSS Grid", "CSS Animations"],
@@ -24,20 +26,22 @@
         },
         {
             "id": 3,
-            "title": "Cybersecurity Learning Hub",
-            "description": "A multi-page educational website introducing cybersecurity fundamentals: common threats, defense strategies, encryption basics, and safe browsing practices for beginners.",
-            "github": "https://github.com/saiaikkwan/cybersec-learning-hub",
+            "title": "Learning Map - Curated Learning Hub",
+            "description": "A personal curated learning hub documenting my journey across Web Development, Cybersecurity, Networking, and Ethical Hacking. Features interactive tools, quiz system, and resource directory with honest reviews.",
+            "github": "https://github.com/saiaikkwan/learningmap",
+            "liveUrl": "https://saiaikkwan.com/learningmap/",
             "image": "assets/images/project03.png",
             "category": "webdev",
-            "tech": ["HTML5", "CSS3", "JavaScript", "UI/UX Design", "Multi-page Site"],
+            "tech": ["HTML5", "CSS3", "JavaScript", "JSON", "LocalStorage", "Quiz Engine"],
             "featured": true,
-            "date": "2024"
+            "date": "2025"
         },
         {
             "id": 4,
             "title": "SOHO Network Design & Setup",
             "description": "Designed and documented a Small Office/Home Office network with VLAN segmentation, DHCP server configuration, DNS setup, and secure wireless access using enterprise best practices.",
             "github": "https://github.com/saiaikkwan/soho-network",
+            "liveUrl": null,
             "image": "assets/images/project04.png",
             "category": "networking",
             "tech": ["Networking", "VLAN", "DHCP", "DNS", "Subnetting", "Wi-Fi Security"],
@@ -49,6 +53,7 @@
             "title": "Enterprise Network Simulation",
             "description": "Built a multi-site enterprise network in Cisco Packet Tracer with OSPF dynamic routing, inter-VLAN routing, access control lists, and redundant WAN links between branch offices.",
             "github": "https://github.com/saiaikkwan/enterprise-pkt",
+            "liveUrl": null,
             "image": "assets/images/project05.png",
             "category": "networking",
             "tech": ["Cisco", "Packet Tracer", "OSPF", "ACL", "VLAN", "WAN"],
@@ -60,6 +65,7 @@
             "title": "Kali Linux Pentesting Lab",
             "description": "Set up Metasploitable 2 as a vulnerable target and performed full reconnaissance, vulnerability scanning, and controlled exploitation using Kali Linux tools with documented methodology.",
             "github": "https://github.com/saiaikkwan/kali-pentest-lab",
+            "liveUrl": null,
             "image": "assets/images/project06.png",
             "category": "security",
             "tech": ["Kali Linux", "Metasploit", "Nmap", "Wireshark", "Enumeration", "Exploitation"],
@@ -76,7 +82,7 @@
     ],
     
     "filterKeywords": {
-        "webdev": ["html", "css", "javascript", "responsive", "flexbox", "grid", "ui/ux", "multi-page", "form validation", "animations"],
+        "webdev": ["html", "css", "javascript", "responsive", "flexbox", "grid", "ui/ux", "multi-page", "form validation", "animations", "json", "localstorage", "quiz"],
         "networking": ["vlan", "cisco", "dhcp", "dns", "subnetting", "ospf", "acl", "wan", "packet tracer", "wi-fi", "networking"],
         "security": ["kali", "nmap", "wireshark", "security", "metasploit", "enumeration", "exploitation", "firewall", "pentesting"]
     }
