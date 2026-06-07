@@ -121,16 +121,16 @@ function createProjectCard(project) {
     const buttonsHtml = project.liveUrl ? `
         <div class="project-buttons">
             <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link github-link-btn">
-                <i class="fab fa-github"></i> View on GitHub
+                <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right"></i>
             </a>
             <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link live-link-btn">
-                <i class="fas fa-external-link-alt"></i> View Live
+                <i class="fas fa-external-link-alt"></i> View Live <i class="fas fa-arrow-right"></i>
             </a>
         </div>
     ` : `
         <div class="project-buttons">
             <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link github-link-btn">
-                <i class="fab fa-github"></i> View on GitHub
+                <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right"></i>
             </a>
         </div>
     `;
@@ -141,11 +141,11 @@ function createProjectCard(project) {
                  onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1rem;padding:1rem;text-align:center;>${project.title}</div>';">
             <div class="project-overlay">
                 <div class="overlay-buttons">
-                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
-                        <i class="fab fa-github"></i> GitHub
+                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
                     </a>
-                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-live">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-live">
+                        <i class="fas fa-external-link-alt"></i> Live Demo <i class="fas fa-arrow-right"></i>
                     </a>` : ''}
                 </div>
             </div>
@@ -176,11 +176,11 @@ function createHomepageProjectCard(project) {
                  onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, #1e293b, #334155)'; this.parentElement.innerHTML += '<div style=display:flex;align-items:center;justify-content:center;height:100%;color:#94a3b8;font-size:1rem;padding:1rem;text-align:center;>${project.title}</div>';">
             <div class="project-overlay">
                 <div class="overlay-buttons">
-                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn-sm">
-                        <i class="fab fa-github"></i> GitHub
+                    <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn-github">
+                        <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
                     </a>
-                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn btn-sm btn-live">
-                        <i class="fas fa-external-link-alt"></i> Live Demo
+                    ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-live">
+                        <i class="fas fa-external-link-alt"></i> Live Demo <i class="fas fa-arrow-right"></i>
                     </a>` : ''}
                 </div>
             </div>
@@ -191,10 +191,10 @@ function createHomepageProjectCard(project) {
             <div class="project-tech">${techTags}</div>
             <div class="project-buttons">
                 <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="project-link github-link-btn">
-                    <i class="fab fa-github"></i> View on GitHub
+                    <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right"></i>
                 </a>
                 ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link live-link-btn">
-                    <i class="fas fa-external-link-alt"></i> View Live
+                    <i class="fas fa-external-link-alt"></i> View Live <i class="fas fa-arrow-right"></i>
                 </a>` : ''}
             </div>
         </div>
@@ -242,7 +242,6 @@ function createHomepageProjectCard(project) {
         const response = await fetch('assets/data/projects.json');
         const data = await response.json();
         const allProjects = data.projects;
-        const keywords = data.filterKeywords;
         
         function renderProjects(filter = 'all') {
             projectsGridFull.innerHTML = '';
@@ -379,6 +378,61 @@ function createHomepageProjectCard(project) {
             }
         });
     }
+})();
+
+// ============================================
+// ADD CSS FOR OVERLAY BUTTONS (Dynamic)
+// ============================================
+(function addOverlayButtonStyles() {
+    // Check if styles already exist
+    if (document.getElementById('overlay-btn-styles')) return;
+    
+    const styleSheet = document.createElement('style');
+    styleSheet.id = 'overlay-btn-styles';
+    styleSheet.textContent = `
+        .overlay-buttons .btn-github,
+        .overlay-buttons .btn-live {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .overlay-buttons .btn-github:hover {
+            background-color: #e2e8f0;
+            color: #000000;
+            border-color: #e2e8f0;
+            transform: translateY(-2px);
+        }
+        
+        .overlay-buttons .btn-live:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        [data-theme="dark"] .overlay-buttons .btn-github:hover {
+            background-color: #3b3b3b;
+            color: white;
+            border-color: #3b3b3b;
+        }
+        
+        [data-theme="dark"] .overlay-buttons .btn-live:hover {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+    `;
+    document.head.appendChild(styleSheet);
 })();
 
 console.log('✅ saiaikkwan.com - All scripts loaded successfully');
