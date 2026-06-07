@@ -365,10 +365,6 @@ a:hover {
     transform: translateY(-2px);
 }
 
-.github-link-btn i {
-    color: white;
-}
-
 /* On hover, keep it white */
 .github-link-btn:hover i {
     color: white;
