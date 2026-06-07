@@ -402,6 +402,10 @@ a:hover {
     transform: scale(1.05);
 }
 
+.github-link-btn i {
+    color: white;
+}
+
 /* Dark mode adjustments */
 [data-theme="dark"] .github-link-btn {
     background-color: var(--bg-tertiary);
