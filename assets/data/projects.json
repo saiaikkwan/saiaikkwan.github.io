@@ -29,7 +29,7 @@
             "title": "Learning Map - Curated Learning Hub",
             "description": "A personal curated learning hub documenting my journey across Web Development, Cybersecurity, Networking, and Ethical Hacking. Features interactive tools, quiz system, and resource directory with honest reviews.",
             "github": "https://github.com/saiaikkwan/learningmap",
-            "liveUrl": "https://saiaikkwan.com/learningmap/",
+            "liveUrl": "https://saiaikkwan.github.io/learningmap/",
             "image": "assets/images/project03.png",
             "category": "webdev",
             "tech": ["HTML5", "CSS3", "JavaScript", "JSON", "LocalStorage", "Quiz Engine"],
