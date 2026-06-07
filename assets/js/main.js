@@ -124,7 +124,7 @@ function createProjectCard(project) {
                 <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right"></i>
             </a>
             <a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link live-link-btn">
-                <i class="fas fa-external-link-alt"></i> View Live <i class="fas fa-arrow-right"></i>
+                <i class="fas fa-external-link-alt"></i> View Live 
             </a>
         </div>
     ` : `
@@ -145,7 +145,7 @@ function createProjectCard(project) {
                         <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
                     </a>
                     ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-live">
-                        <i class="fas fa-external-link-alt"></i> Live Demo <i class="fas fa-arrow-right"></i>
+                        <i class="fas fa-external-link-alt"></i> Live Demo 
                     </a>` : ''}
                 </div>
             </div>
@@ -180,7 +180,7 @@ function createHomepageProjectCard(project) {
                         <i class="fab fa-github"></i> GitHub <i class="fas fa-arrow-right"></i>
                     </a>
                     ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="btn-live">
-                        <i class="fas fa-external-link-alt"></i> Live Demo <i class="fas fa-arrow-right"></i>
+                        <i class="fas fa-external-link-alt"></i> Live Demo 
                     </a>` : ''}
                 </div>
             </div>
@@ -194,7 +194,7 @@ function createHomepageProjectCard(project) {
                     <i class="fab fa-github"></i> View on GitHub <i class="fas fa-arrow-right"></i>
                 </a>
                 ${project.liveUrl ? `<a href="${project.liveUrl}" target="_blank" rel="noopener noreferrer" class="project-link live-link-btn">
-                    <i class="fas fa-external-link-alt"></i> View Live <i class="fas fa-arrow-right"></i>
+                    <i class="fas fa-external-link-alt"></i> View Live 
                 </a>` : ''}
             </div>
         </div>
