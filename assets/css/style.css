@@ -373,6 +373,7 @@ a:hover {
 
 .live-link-btn:hover {
     background-color: var(--primary-dark);
+    color: white;
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(37, 99, 235, 0.3);
 }
