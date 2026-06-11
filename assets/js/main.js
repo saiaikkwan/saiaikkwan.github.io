@@ -435,4 +435,20 @@ function createHomepageProjectCard(project) {
     document.head.appendChild(styleSheet);
 })();
 
+// ============================================
+// HEADER SHADOW ON SCROLL (Like Laravel)
+// ============================================
+(function() {
+    const header = document.querySelector('.header');
+    if (!header) return;
+    
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 10) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    });
+})();
+
 console.log('✅ saiaikkwan.com - All scripts loaded successfully');
