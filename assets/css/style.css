@@ -220,9 +220,26 @@ a:hover {
     transition: transform 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
 
+/* Icon colors - Fixed */
+.theme-toggle .sun-icon {
+    color: var(--primary);
+}
+
+.theme-toggle .moon-icon {
+    color: var(--text-primary);
+}
+
 .theme-toggle:hover {
     background: rgba(var(--primary-rgb), 0.15);
     transform: scale(1.05);
+}
+
+.theme-toggle:hover .sun-icon {
+    color: var(--primary-light);
+}
+
+.theme-toggle:hover .moon-icon {
+    color: var(--primary-light);
 }
 
 .theme-toggle:active i {
@@ -2087,4 +2104,101 @@ a:hover {
     to {
         opacity: 1;
     }
+}
+
+/* ============================================
+   BOX VISIBILITY FIX - PRIMARY COLOR BORDERS (LIGHT THEME)
+   ============================================ */
+
+/* Light theme - boxes have blue borders and blue glow */
+[data-theme="light"] .project-card,
+[data-theme="light"] .focus-card,
+[data-theme="light"] .testimonial-card,
+[data-theme="light"] .cert-card,
+[data-theme="light"] .stat-box,
+[data-theme="light"] .timeline-content,
+[data-theme="light"] .contact-card,
+[data-theme="light"] .form-box,
+[data-theme="light"] .social-link-large,
+[data-theme="light"] .tool-item,
+[data-theme="light"] .edu-card {
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.08);
+    transition: all 0.3s ease;
+}
+
+/* Light theme - hover effect with stronger blue */
+[data-theme="light"] .project-card:hover,
+[data-theme="light"] .focus-card:hover,
+[data-theme="light"] .testimonial-card:hover,
+[data-theme="light"] .cert-card:hover,
+[data-theme="light"] .contact-card:hover,
+[data-theme="light"] .social-link-large:hover {
+    border-color: rgba(37, 99, 235, 0.6);
+    box-shadow: 0 8px 24px rgba(37, 99, 235, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Dark theme - keep original styling */
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .focus-card,
+[data-theme="dark"] .testimonial-card,
+[data-theme="dark"] .cert-card,
+[data-theme="dark"] .stat-box,
+[data-theme="dark"] .timeline-content,
+[data-theme="dark"] .contact-card,
+[data-theme="dark"] .form-box,
+[data-theme="dark"] .social-link-large,
+[data-theme="dark"] .tool-item {
+    border: 1px solid var(--border-color);
+    background-color: var(--card-bg);
+    box-shadow: var(--card-shadow);
+}
+
+/* Specific fix for stat boxes */
+[data-theme="light"] .stat-box {
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    background-color: #ffffff;
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+/* Specific fix for timeline content */
+[data-theme="light"] .timeline-content {
+    border: 1px solid rgba(37, 99, 235, 0.25);
+    box-shadow: 0 2px 8px rgba(37, 99, 235, 0.06);
+}
+
+/* Tool items on light theme */
+[data-theme="light"] .tool-item {
+    border: 1px solid rgba(37, 99, 235, 0.2);
+    background-color: #ffffff;
+}
+
+[data-theme="light"] .tool-item:hover {
+    border-color: rgba(37, 99, 235, 0.5);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.1);
+}
+
+/* Make sure white theme cards have white background */
+[data-theme="light"] .project-card,
+[data-theme="light"] .focus-card,
+[data-theme="light"] .testimonial-card,
+[data-theme="light"] .cert-card,
+[data-theme="light"] .stat-box,
+[data-theme="light"] .timeline-content,
+[data-theme="light"] .contact-card,
+[data-theme="light"] .social-link-large {
+    background-color: #ffffff;
+}
+
+/* Skill tags on light theme - blue border */
+[data-theme="light"] .skill-tag.tech-skill {
+    border: 1px solid rgba(37, 99, 235, 0.3);
+    background-color: #f8fafc;
+}
+
+[data-theme="light"] .skill-tag.tech-skill:hover {
+    border-color: var(--primary);
+    background-color: var(--primary);
 }
