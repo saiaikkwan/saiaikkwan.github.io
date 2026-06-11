@@ -109,7 +109,7 @@ a:hover {
 .header {
     background-color: var(--bg-primary);
     border-bottom: 1px solid var(--border-color);
-    position: sticky;
+    position: fixed;
     top: 0;
     z-index: 100;
     backdrop-filter: blur(10px);
