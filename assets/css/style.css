@@ -159,11 +159,6 @@ a:hover {
     color: var(--text-primary);
 }
 
-.logo-badge {
-    color: var(--primary);
-    font-size: 0.9rem;
-}
-
 .nav-list {
     display: flex;
     list-style: none;
@@ -1902,7 +1897,7 @@ a:hover {
 .fa-react { color: #61DAFB; }
 .fa-node { color: #339933; }
 .fa-linux { color: #FCC624; }
-.fa-windows { color: #0078D4; }
+.fa-windows { color: #000000; }
 .fa-github { color: var(--text-primary); }
 .fa-linkedin { color: #0A66C2; }
 .fa-instagram { color: #E1306C; }
