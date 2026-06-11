@@ -1913,7 +1913,7 @@ a:hover {
 .fa-python { color: #3776AB; }
 .fa-react { color: #61DAFB; }
 .fa-node { color: #339933; }
-.fa-linux { color: #FCC624; }
+.fa-linux { color: #000000; }
 .fa-windows { color: #000000; }
 .fa-github { color: var(--text-primary); }
 .fa-linkedin { color: #0A66C2; }
@@ -1980,9 +1980,16 @@ a:hover {
 .tool-item:hover .fa-network-wired {
     color: var(--primary);
 }
-.social-link:hover .fa-github { color: #ffffff; }
+/* GitHub icon hover - Light theme: black, Dark theme: white */
+[data-theme="light"] .social-link:hover .fa-github {
+    color: #000000;
+}
+
+[data-theme="dark"] .social-link:hover .fa-github {
+    color: #ffffff;
+}
+
 .social-link:hover .fa-linkedin { color: #0A66C2; }
-.social-link:hover .fa-envelope { color: #EA4335; }
 
 /* ============================================
    RESPONSIVE DESIGN
@@ -2197,7 +2204,8 @@ a:hover {
 [data-theme="light"] .timeline-content,
 [data-theme="light"] .contact-card,
 [data-theme="light"] .social-link-large,
-[data-theme="light"] .tool-item {
+[data-theme="light"] .tool-item,
+[data-theme="light"] .more-projects-cta {
     background-color: #ffffff;
 }
 
