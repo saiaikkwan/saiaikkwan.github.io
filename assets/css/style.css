@@ -2191,3 +2191,110 @@ a:hover {
     background-color: var(--card-bg);
     box-shadow: var(--card-shadow);
 }
+
+/* ============================================
+   DARK THEME - HOVER EFFECTS
+   ============================================ */
+
+/* Dark theme - hover effects for all boxes */
+[data-theme="dark"] .project-card:hover,
+[data-theme="dark"] .focus-card:hover,
+[data-theme="dark"] .testimonial-card:hover,
+[data-theme="dark"] .cert-card:hover,
+[data-theme="dark"] .stat-box:hover,
+[data-theme="dark"] .timeline-content:hover,
+[data-theme="dark"] .contact-card:hover,
+[data-theme="dark"] .form-box:hover,
+[data-theme="dark"] .contact-form-wrapper:hover,
+[data-theme="dark"] .tool-item:hover,
+[data-theme="dark"] .edu-card:hover,
+[data-theme="dark"] .more-projects-cta:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+    transform: translateY(-4px);
+}
+
+/* Dark theme - social-link-large horizontal movement */
+[data-theme="dark"] .social-link-large:hover {
+    transform: translateX(8px);
+}
+
+/* Dark theme - skill tags with hover effects */
+[data-theme="dark"] .skill-tag.tech-skill {
+    background-color: var(--bg-tertiary);
+    color: var(--text-secondary);
+    border: 1px solid var(--border-color);
+}
+
+[data-theme="dark"] .skill-tag.tech-skill:hover {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.25);
+}
+
+[data-theme="dark"] .skill-tag.tech-skill:hover i {
+    color: white !important;
+}
+
+[data-theme="dark"] .skill-tag.soft-skill {
+    background-color: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+[data-theme="dark"] .skill-tag.soft-skill:hover {
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
+    border-color: var(--primary);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.15);
+}
+
+[data-theme="dark"] .skill-tag.soft-skill:hover i {
+    color: var(--primary) !important;
+}
+
+/* Dark theme - tool-item hover */
+[data-theme="dark"] .tool-item:hover {
+    border-color: var(--primary);
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.12);
+}
+
+/* Dark theme - more-projects-cta hover */
+[data-theme="dark"] .more-projects-cta:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Dark theme - timeline-content hover */
+[data-theme="dark"] .timeline-content:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.12);
+}
+
+/* Dark theme - stat-box hover */
+[data-theme="dark"] .stat-box:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.12);
+}
+
+/* Dark theme - contact-card hover */
+[data-theme="dark"] .contact-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.12);
+}
+
+/* Dark theme - form-box hover */
+[data-theme="dark"] .form-box:hover,
+[data-theme="dark"] .contact-form-wrapper:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.15);
+}
+
+/* Dark theme - cert-card hover */
+[data-theme="dark"] .cert-card:hover {
+    border-color: var(--primary);
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.12);
+}
